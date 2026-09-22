@@ -5,22 +5,23 @@ export function BrandLogo({ priority = false }: { priority?: boolean }) {
   return (
     <Link
       href="/"
-      className="brand-logo"
-      aria-label="DATALINK TECH CORP, inicio"
+      className="brand"
+      aria-label="DataLink Tech Corp, ir al inicio"
     >
-      <span className="brand-image">
-        <Image
-          src="/datalink-logo.png"
-          alt=""
-          width={2172}
-          height={724}
-          sizes="180px"
-          loading={priority ? "eager" : "lazy"}
-          fetchPriority="low"
-        />
-      </span>
-      <span className="brand-word">
-        DATALINK<small>TECH CORP</small>
+      <Image
+        className="brand-mark"
+        src="/datalink-isotipo.png"
+        alt=""
+        width={490}
+        height={404}
+        sizes="44px"
+        priority={priority}
+      />
+      <span className="brand-type">
+        <b>
+          DATA<i>LINK</i>
+        </b>
+        <small>TECH CORP</small>
       </span>
     </Link>
   );

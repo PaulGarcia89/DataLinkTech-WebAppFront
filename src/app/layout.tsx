@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { siteUrl } from "@/lib/content";
 import { organizationSchema, pageMetadata, siteDescription } from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
-import localFont from "next/font/local";
+
 const heading = localFont({
   src: [
     {
@@ -22,6 +23,7 @@ const heading = localFont({
   display: "optional",
   preload: true,
 });
+
 const body = localFont({
   src: [
     {
@@ -44,19 +46,26 @@ const body = localFont({
   display: "swap",
   preload: false,
 });
+
 import "./globals.css";
+
 export const metadata: Metadata = {
   ...pageMetadata(
-    "DataLink Tech Corp | Tecnología que impulsa tu negocio",
+    "DataLink Tech Corp | Tecnología e IA para negocios que avanzan",
     siteDescription,
     "/",
   ),
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DataLink Tech Corp | Tecnología que impulsa tu negocio",
+    default: "DataLink Tech Corp | Tecnología e IA para negocios que avanzan",
     template: "%s | DataLink Tech Corp",
   },
 };
+
+export const viewport = {
+  themeColor: "#050a12",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {

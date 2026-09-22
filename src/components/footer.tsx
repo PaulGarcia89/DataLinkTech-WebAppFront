@@ -1,85 +1,120 @@
 import Link from "next/link";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
-import { services, contact } from "@/lib/content";
-export function CTA() {
+import { brand, contact, sectors, services } from "@/lib/content";
+
+export function CTA({
+  title = (
+    <>
+      Conectemos lo que tu
+      <br />
+      negocio ya puede <em>hacer.</em>
+    </>
+  ),
+  copy = "Revisamos tu operación, identificamos qué conviene automatizar o conectar primero y te proponemos un plan realista. Sin compromiso.",
+}: {
+  title?: React.ReactNode;
+  copy?: string;
+}) {
   return (
-    <section className="final-cta">
+    <section className="cta">
       <div className="container">
-        <div className="converging-network" aria-hidden="true">
-          <svg viewBox="0 0 800 130">
-            <path d="M0 15 Q300 15 400 95 M0 60 Q300 60 400 95 M0 115 Q300 115 400 95 M800 15 Q500 15 400 95 M800 60 Q500 60 400 95 M800 115 Q500 115 400 95" />
+        <div className="cta-converge" aria-hidden="true">
+          <svg viewBox="0 0 560 90" role="presentation">
+            <path d="M0 8 Q220 8 280 74 M0 40 Q220 40 280 74 M0 72 Q220 72 280 74 M560 8 Q340 8 280 74 M560 40 Q340 40 280 74 M560 72 Q340 72 280 74" />
+            <circle cx="280" cy="76" r="5" />
           </svg>
-          <span>D</span>
         </div>
-        <span className="eyebrow">CONECTEMOS LO QUE VIENE</span>
-        <h2>
-          El futuro de tu negocio
-          <br />
-          puede empezar <em>hoy.</em>
-        </h2>
-        <p>
-          Evaluamos oportunidades para automatizar, conectar y mejorar la
-          tecnología de tu negocio.
-        </p>
-        <div className="cta-actions">
-          <Link className="button button-primary" href="/contacto/">
-            Solicita tu evaluación tecnológica <ArrowUpRight size={18} />
+
+        <p className="eyebrow">EL SIGUIENTE PASO</p>
+        <h2>{title}</h2>
+        <p>{copy}</p>
+
+        <div className="btn-row">
+          <Link className="btn btn-signal" href="/contacto/">
+            Solicitar evaluación tecnológica
+            <ArrowUpRight size={18} />
           </Link>
           <a
+            className="btn btn-line"
             href={contact.whatsapp}
-            className="text-link"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageCircle size={19} /> Hablemos por WhatsApp
+            <MessageCircle size={18} />
+            Escribir por WhatsApp
           </a>
         </div>
       </div>
     </section>
   );
 }
+
 export function Footer() {
   return (
-    <footer>
-      <div className="container footer-grid">
-        <div>
-          <BrandLogo />
-          <p>Tecnología que impulsa tu negocio.</p>
-          <span className="footer-location">Miami · South Florida</span>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <BrandLogo />
+            <p>{brand.descriptor}. Ideas conectadas a tu crecimiento.</p>
+            <span className="mono">{contact.region}</span>
+          </div>
+
+          <div>
+            <h3>Soluciones</h3>
+            <div className="footer-col">
+              {services.map((s) => (
+                <Link key={s.slug} href={`/${s.slug}/`}>
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3>DataLink</h3>
+            <div className="footer-col">
+              <Link href="/soluciones/">Soluciones</Link>
+              <Link href="/industrias/">Industrias</Link>
+              {sectors.slice(0, 1).map((s) => (
+                <Link key={s.slug} href={s.href}>
+                  {s.name}
+                </Link>
+              ))}
+              <Link href="/nosotros/">Nosotros</Link>
+              <Link href="/contacto/">Contacto</Link>
+            </div>
+          </div>
+
+          <div>
+            <h3>Hablemos</h3>
+            <div className="footer-col">
+              <a href={`mailto:${contact.email}`}>
+                <Mail size={15} />
+                {contact.email}
+              </a>
+              <a href={`tel:${contact.tel}`}>
+                <Phone size={15} />
+                {contact.phone}
+              </a>
+              <a
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={15} />
+                WhatsApp
+                <ArrowUpRight size={12} />
+              </a>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3>Soluciones</h3>
-          {services.map((s) => (
-            <Link key={s.slug} href={`/${s.slug}/`}>
-              {s.name}
-            </Link>
-          ))}
+
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} DataLink Tech Corp</span>
+          <span>{brand.chainLabel}</span>
         </div>
-        <div>
-          <h3>DataLink</h3>
-          <Link href="/industrias/">Industrias</Link>
-          <Link href="/industrias/restaurantes/">Restaurantes</Link>
-          <Link href="/nosotros/">Nosotros</Link>
-          <Link href="/contacto/">Contacto</Link>
-        </div>
-        <div>
-          <h3>Hablemos</h3>
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          <a href={`tel:${contact.tel}`}>{contact.phone}</a>
-          <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer">
-            WhatsApp <ArrowUpRight size={13} />
-          </a>
-          <p>
-            Ideas conectadas.
-            <br />
-            Negocios en crecimiento.
-          </p>
-        </div>
-      </div>
-      <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} DataLink Tech Corp</span>
-        <span>DATOS → CONEXIÓN → INTELIGENCIA → CRECIMIENTO</span>
       </div>
     </footer>
   );

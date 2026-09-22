@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { contact, siteUrl } from "./content";
 
 export const siteDescription =
-  "Soluciones de IA, automatización, marketing digital, software, infraestructura, seguridad y soporte IT para negocios en Miami y South Florida.";
+  "IA y automatización, marketing digital, software a medida, redes, seguridad y soporte IT para negocios de Miami y South Florida. Un solo aliado tecnológico.";
 
 export function pageMetadata(
   title: string,
@@ -25,7 +25,7 @@ export function pageMetadata(
           url: "/opengraph-image.png",
           width: 1200,
           height: 630,
-          alt: "DataLink Tech Corp — Tecnología que impulsa tu negocio",
+          alt: "DataLink Tech Corp — Tecnología e IA para negocios que avanzan",
         },
       ],
     },
@@ -45,14 +45,17 @@ export const organizationSchema = {
   name: "DataLink Tech Corp",
   url: siteUrl,
   logo: `${siteUrl}/datalink-logo.png`,
+  image: `${siteUrl}/opengraph-image.png`,
   email: contact.email,
   telephone: contact.tel,
   description: siteDescription,
+  areaServed: ["Miami", "South Florida"],
+  slogan: "Tecnología que impulsa tu negocio",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: contact.tel,
     email: contact.email,
     contactType: "customer service",
-    availableLanguage: ["Spanish"],
+    availableLanguage: ["Spanish", "English"],
   },
 };

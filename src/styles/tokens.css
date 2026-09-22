@@ -1,37 +1,178 @@
+/* ============================================================
+   DATALINK TECH CORP — SISTEMA DE DISEÑO
+   "Arquitectura de enlace"
+   El módulo de píxeles del isotipo es la unidad del diseño.
+   ============================================================ */
+
 :root {
-  --navy: #0b2d5b;
-  --blue: #0066ff;
-  --cyan: #00d1ff;
-  --bg: #070d16;
-  --surface: #101925;
-  --surface-raised: #172331;
-  --paper: #f2f4f5;
-  --ink: #111d2b;
-  --text: #f6f8fb;
-  --muted: #a6b2c3;
-  --muted-light: #506071;
-  --line: #293542;
-  --line-light: #c9d0d6;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-24: 96px;
-  --space-32: 128px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --container: 1280px;
-  --gutter: clamp(20px, 4vw, 64px);
-  --section-space: clamp(64px, 8vw, 128px);
+  /* --- Paleta oficial de marca --- */
+  --navy: #0b2d5b; /* Confianza · Estabilidad */
+  --blue: #0066ff; /* Tecnología · Innovación */
+  --cyan: #00d1ff; /* Futuro · Automatización */
+  --steel: #64748b; /* Profesionalismo · Equilibrio */
+  --mist: #e5e7eb; /* Claridad · Minimalismo */
+  --white: #ffffff; /* Pureza · Espacio */
+
+  /* --- Derivados estructurales --- */
+  --abyss: #050a12; /* plano profundo */
+  --deep: #070e1a;
+  --navy-deep: #08213f;
+  --navy-soft: #123a6d;
+  --paper: #f4f6f8;
+  --ink: #0a1624;
+
+  /* --- Variables de plano (las redefine cada sección) --- */
+  --surface: var(--abyss);
+  --surface-raised: #0c1625;
+  --surface-sunken: #030710;
+  --text: #eef3f9;
+  --text-strong: #ffffff;
+  --text-muted: #95a6bd;
+  --text-faint: #61748c;
+  --line: #1b2a3e;
+  --line-strong: #253a52;
+  --accent: var(--cyan);
+  --accent-ink: var(--cyan);
+  --grid-line: #ffffff0a;
+
+  /* --- Tipografía --- */
+  --font-display: var(--font-heading), "Poppins", system-ui, sans-serif;
+  --font-text: var(--font-body), "Montserrat", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Roboto Mono", Menlo, monospace;
+
+  --fs-micro: 0.6875rem; /* 11px — etiquetas técnicas */
+  --fs-small: 0.8125rem; /* 13px */
+  --fs-body-s: 0.9375rem; /* 15px */
+  --fs-body: 1.0625rem; /* 17px */
+  --fs-body-l: clamp(1.125rem, 0.4vw + 1rem, 1.3125rem);
+  --fs-h4: clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+  --fs-h3: clamp(1.375rem, 1vw + 1.1rem, 1.875rem);
+  --fs-h2: clamp(2rem, 3.1vw + 1.1rem, 3.75rem);
+  --fs-h1: clamp(2.5rem, 5.2vw + 0.9rem, 5.5rem);
+  --fs-display: clamp(3rem, 8vw + 0.5rem, 8rem);
+
+  --lh-tight: 0.98;
+  --lh-snug: 1.12;
+  --lh-normal: 1.6;
+  --tracking-micro: 0.18em;
+  --tracking-tight: -0.03em;
+  --tracking-display: -0.045em;
+
+  /* --- Módulo y espacio (base 8) --- */
+  --u: 8px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 176px;
+
+  --container: 1320px;
+  --container-narrow: 940px;
+  --gutter: clamp(20px, 5vw, 72px);
+  --plane-space: clamp(72px, 9vw, 144px);
+
+  /* --- Formas --- */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 10px;
+  --r-lg: 18px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* --- Movimiento --- */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --fast: 180ms;
-  --normal: 300ms;
-  --shadow: 0 24px 80px #0003;
-  --signal-glow: 0 0 32px #00d1ff20;
-  --z-nav: 30;
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 160ms;
+  --t-base: 280ms;
+  --t-slow: 620ms;
+
+  /* --- Elevación y luz --- */
+  --shadow-sm: 0 2px 8px #0000001f;
+  --shadow-md: 0 18px 44px -18px #00000073;
+  --shadow-lg: 0 40px 100px -32px #000000a6;
+  --glow-cyan: 0 0 0 1px #00d1ff33, 0 0 44px -6px #00d1ff4d;
+  --glow-blue: 0 0 40px -8px #0066ff80;
+
+  --z-grid: 0;
+  --z-content: 1;
+  --z-nav: 60;
+  --z-overlay: 80;
+}
+
+/* ============================================================
+   PLANOS — cada sección declara su plano y hereda sus variables
+   ============================================================ */
+
+.plane-deep {
+  --surface: var(--abyss);
+  --surface-raised: #0c1626;
+  --surface-sunken: #03070e;
+  --text: #e9eff7;
+  --text-strong: #ffffff;
+  --text-muted: #93a4bb;
+  --text-faint: #5d7089;
+  --line: #1a2942;
+  --line-strong: #27405f;
+  --accent: var(--cyan);
+  --accent-ink: var(--cyan);
+  --grid-line: #ffffff0a;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.plane-navy {
+  --surface: var(--navy);
+  --surface-raised: #123765;
+  --surface-sunken: #08224a;
+  --text: #e6eefb;
+  --text-strong: #ffffff;
+  --text-muted: #a9c0e0;
+  --text-faint: #7e9ac2;
+  --line: #1c4880;
+  --line-strong: #2f63a5;
+  --accent: var(--cyan);
+  --accent-ink: var(--cyan);
+  --grid-line: #ffffff0f;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.plane-paper {
+  --surface: var(--paper);
+  --surface-raised: var(--white);
+  --surface-sunken: #e8ecf1;
+  --text: #233246;
+  --text-strong: var(--ink);
+  --text-muted: #55677f;
+  --text-faint: #8496ac;
+  --line: #d9e0e8;
+  --line-strong: #bcc7d4;
+  --accent: var(--blue);
+  --accent-ink: #0052cc;
+  --grid-line: #0b2d5b0d;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.plane-white {
+  --surface: var(--white);
+  --surface-raised: var(--paper);
+  --surface-sunken: #eef1f5;
+  --text: #233246;
+  --text-strong: var(--ink);
+  --text-muted: #55677f;
+  --text-faint: #8496ac;
+  --line: #e2e7ed;
+  --line-strong: #c6d0da;
+  --accent: var(--blue);
+  --accent-ink: #0052cc;
+  --grid-line: #0b2d5b0a;
+  background: var(--surface);
+  color: var(--text);
 }

@@ -1,205 +1,238 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
-import { services, siteUrl } from "@/lib/content";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { method, services, siteUrl } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { Glyph } from "@/components/icons";
+import { Reveal } from "@/components/reveal";
+import { SectionHead } from "@/components/home/sections";
 import { StructuredData } from "@/components/structured-data";
+import { VenueMap } from "@/components/visuals/venue-map";
 import { CTA } from "@/components/footer";
-import {
-  AIWorkflow,
-  InteractiveDemo,
-} from "@/components/demo/interactive-demo";
-import {
-  GrowthEngine,
-  SoftwareProcess,
-} from "@/components/home/growth-software";
-import { RestaurantDigitalTwin } from "@/components/industries/restaurant-digital-twin";
 
 export const dynamicParams = false;
+
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const s = services.find((s) => s.slug === slug);
-  if (!s) return {};
+  const service = services.find((s) => s.slug === slug);
+  if (!service) return {};
   return pageMetadata(
-    `${s.name} en Miami`,
-    `${s.description} Para negocios en Miami y South Florida.`,
+    `${service.name} en Miami`,
+    `${service.description} Para negocios en Miami y South Florida.`,
     `/${slug}/`,
   );
 }
+
+/** Capa del plano que conviene destacar en cada servicio físico. */
+const VENUE_LAYER: Record<string, number> = {
+  "redes-e-infraestructura": 0,
+  "software-a-medida": 1,
+  "seguridad-y-control": 2,
+  "ia-y-automatizacion": 3,
+  "soporte-it": 4,
+};
+
 export default async function ServicePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const s = services.find((s) => s.slug === slug);
-  if (!s) notFound();
-  const ai = slug === "ia-y-automatizacion";
-  const marketing = slug === "marketing-digital";
-  const software = slug === "software-a-medida";
+  const service = services.find((s) => s.slug === slug);
+  if (!service) notFound();
+
+  const layer = VENUE_LAYER[slug];
+
   return (
     <>
       <StructuredData
         data={{
           "@context": "https://schema.org",
           "@type": "Service",
-          name: s.name,
-          description: s.description,
+          name: service.name,
+          description: service.description,
           url: `${siteUrl}/${slug}/`,
           areaServed: ["Miami", "South Florida"],
           provider: { "@id": `${siteUrl}/#organization` },
         }}
       />
-      <section className="container service-hero">
-        <nav className="breadcrumb" aria-label="Ruta de navegación">
-          <Link href="/soluciones/">Soluciones</Link>
-          <span>/</span>
-          <span>{s.name}</span>
-        </nav>
-        <div className="service-hero-grid">
-          <div>
-            <span className="eyebrow">{s.tag} / MIAMI + SOUTH FLORIDA</span>
-            <h1>
-              {s.name}
-              <br />
-              <em>con propósito.</em>
-            </h1>
-            <p>{s.description}</p>
-            <Link href="/contacto/" className="button button-primary">
-              Conversemos sobre tu negocio <ArrowUpRight size={18} />
-            </Link>
-          </div>
-          <div className="service-hero-aside">
-            <span className="micro-label">EL PUNTO DE PARTIDA</span>
-            <h2>{s.short}</h2>
-            <ul>
-              {s.items.map((item) => (
-                <li key={item}>
-                  <Check size={17} />
-                  {item}
-                </li>
-              ))}
-            </ul>
+
+      {/* --- Portada del servicio --- */}
+      <section className="page-hero">
+        <div className="container">
+          <nav className="breadcrumb" aria-label="Ruta de navegación">
+            <Link href="/soluciones/">Soluciones</Link>
+            <span aria-hidden="true">/</span>
+            <b>{service.name}</b>
+          </nav>
+
+          <div className="page-hero-grid">
+            <div>
+              <p className="eyebrow">
+                {service.index} · {service.tag}
+              </p>
+              <h1 style={{ marginTop: "var(--s-5)" }}>{service.name}</h1>
+              <p className="lead">{service.description}</p>
+              <div className="btn-row" style={{ marginTop: "var(--s-6)" }}>
+                <Link className="btn btn-primary" href="/contacto/">
+                  Conversemos sobre tu negocio
+                  <ArrowUpRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="svc-hero-panel">
+              <span className="mono">EL PUNTO DE PARTIDA</span>
+              <h2>{service.promise}</h2>
+              <ul>
+                {service.capabilities.map((c) => (
+                  <li key={c.title}>
+                    <Check size={16} />
+                    {c.title}
+                  </li>
+                ))}
+              </ul>
+              <span className="service-card__glyph">
+                <Glyph name={service.icon} size={23} />
+              </span>
+            </div>
           </div>
         </div>
       </section>
-      {ai ? (
-        <section className="section light-section">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow">DE LA INTENCIÓN A LA ACCIÓN</span>
-                <h2>
-                  La IA se entiende mejor
-                  <br />
-                  <em>cuando la ves trabajar.</em>
-                </h2>
+
+      {/* --- Qué incluye --- */}
+      <section className="plane plane-paper plane-grid">
+        <span className="plane-index">ALCANCE</span>
+        <div className="container">
+          <SectionHead
+            split
+            eyebrow="QUÉ INCLUYE"
+            title={
+              <>
+                Tres frentes de trabajo
+                <br />
+                <em>en un mismo servicio.</em>
+              </>
+            }
+            lead="Cada proyecto se ajusta al tamaño y al momento del negocio. Estos son los frentes que solemos cubrir."
+          />
+          <Reveal className="capabilities">
+            {service.capabilities.map((c) => (
+              <div className="cap" key={c.title}>
+                <h3>{c.title}</h3>
+                <p>{c.copy}</p>
               </div>
-              <AIWorkflow />
-            </div>
-            <InteractiveDemo />
-            <div className="service-usecases">
-              <h3>Más allá de responder mensajes.</h3>
-              <p>
-                Asistentes para el equipo, procesamiento de documentos,
-                clasificación de consultas, automatización de citas y analítica
-                del negocio. Empezamos por un proceso concreto y validamos qué
-                integración tiene sentido.
-              </p>
-            </div>
-          </div>
-        </section>
-      ) : marketing || software ? (
-        <section className="section light-section">
-          <div className="container detail-editorial">
-            <div>
-              <span className="eyebrow">
-                {marketing
-                  ? "CRECIMIENTO CON CONTINUIDAD"
-                  : "CONSTRUIR ALREDEDOR DE TU NEGOCIO"}
-              </span>
-              <h2>
-                {marketing
-                  ? "De la primera visita a una relación."
-                  : "Cada proceso merece una buena interfaz."}
-              </h2>
-              <p>
-                {marketing
-                  ? "Definimos estrategia, canales, contenido y seguimiento. El objetivo es conectar cada etapa del recorrido comercial y poder evaluar qué mejorar."
-                  : "Comprendemos el problema, diseñamos la arquitectura y construimos una interfaz que el equipo pueda usar. Validamos, desplegamos y dejamos una base para evolucionar."}
-              </p>
-            </div>
-            {marketing ? <GrowthEngine /> : <SoftwareProcess />}
-          </div>
-        </section>
-      ) : (
-        <section className="section restaurant-section">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow">LA BASE DEL NEGOCIO CONECTADO</span>
-                <h2>
-                  Tecnología física.
-                  <br />
-                  <em>Visión integral.</em>
-                </h2>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* --- Qué cambia --- */}
+      <section className="plane plane-deep plane-grid">
+        <span className="plane-index">RESULTADO</span>
+        <div className="container-narrow">
+          <SectionHead
+            eyebrow="QUÉ CAMBIA EN TU OPERACIÓN"
+            title={
+              <>
+                Del día a día actual
+                <br />
+                <em>al que quieres tener.</em>
+              </>
+            }
+          />
+          <Reveal className="shifts">
+            {service.shifts.map(([before, after]) => (
+              <div className="shift-row" key={before}>
+                <span>{before}</span>
+                <span className="shift-arrow" aria-hidden="true">
+                  <ArrowRight size={19} />
+                </span>
+                <span>{after}</span>
               </div>
-              <p>
-                {slug === "soporte-it"
-                  ? "Diagnóstico, mantenimiento y acompañamiento para resolver incidencias y planificar mejoras."
-                  : slug === "seguridad-y-control"
-                    ? "Accesos, cámaras y respaldo se planifican junto al resto de tu operación."
-                    : "Conectividad, dispositivos y sistemas necesitan una base diseñada para trabajar juntos."}
-              </p>
-            </div>
-            <RestaurantDigitalTwin
-              initialLayer={
-                slug === "seguridad-y-control"
-                  ? 5
-                  : slug === "soporte-it"
-                    ? 4
-                    : 3
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* --- Dónde vive este servicio --- */}
+      {layer !== undefined && (
+        <section className="plane plane-navy plane-grid">
+          <span className="plane-index">EN EL LOCAL</span>
+          <div className="container">
+            <SectionHead
+              split
+              eyebrow="DÓNDE VIVE ESTE SERVICIO"
+              title={
+                <>
+                  Tu negocio, visto
+                  <br />
+                  <em>como un solo sistema.</em>
+                </>
               }
+              lead="Cada capa se planifica junto a las demás. Explora el plano para ver cómo encaja este servicio con el resto de la operación."
             />
+            <VenueMap initialLayer={layer} />
           </div>
         </section>
       )}
-      <section className="section container delivery-section">
-        <span className="eyebrow">CÓMO EMPEZAMOS</span>
-        <div className="delivery-steps">
-          {[
-            [
-              "01",
-              "Entender",
-              "Revisamos tu situación y los sistemas que ya utilizas.",
-            ],
-            [
-              "02",
-              "Definir",
-              "Acordamos objetivos, prioridades y un alcance realista.",
-            ],
-            [
-              "03",
-              "Conectar",
-              "Implementamos, validamos y acompañamos el cambio.",
-            ],
-          ].map(([n, t, p]) => (
-            <div key={n}>
-              <span>{n}</span>
-              <h3>{t}</h3>
-              <p>{p}</p>
-            </div>
-          ))}
+
+      {/* --- Cómo empezamos --- */}
+      <section className="plane plane-white plane-grid">
+        <span className="plane-index">PROCESO</span>
+        <div className="container">
+          <SectionHead
+            eyebrow="CÓMO EMPEZAMOS"
+            title={
+              <>
+                Cuatro pasos, <em>sin sorpresas.</em>
+              </>
+            }
+          />
+        </div>
+        <div className="container">
+          <Reveal className="method">
+            {method.map((m) => (
+              <div className="method-step" key={m.step}>
+                <b>{m.step}</b>
+                <h3>{m.title}</h3>
+                <p>{m.copy}</p>
+              </div>
+            ))}
+          </Reveal>
         </div>
       </section>
+
+      {/* --- Otras soluciones --- */}
+      <section className="plane plane-tight plane-deep">
+        <div className="container">
+          <p className="eyebrow" style={{ marginBottom: "var(--s-6)" }}>
+            LAS SEIS SOLUCIONES
+          </p>
+          <nav className="svc-nav" aria-label="Otras soluciones">
+            {services.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/${s.slug}/`}
+                aria-current={s.slug === slug ? "page" : undefined}
+              >
+                <span className="mono">{s.index}</span>
+                <b>{s.name}</b>
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </section>
+
       <CTA />
     </>
   );

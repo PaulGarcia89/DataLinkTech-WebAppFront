@@ -1,63 +1,78 @@
 import Link from "next/link";
-import { ArrowUpRight, Building2, Store, UtensilsCrossed } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
-import { RestaurantSection } from "@/components/home/story-sections";
+import { sectors } from "@/lib/content";
+import { Glyph } from "@/components/icons";
+import { SectionHead } from "@/components/home/sections";
+import { VenueMap } from "@/components/visuals/venue-map";
 import { CTA } from "@/components/footer";
+
 export const metadata = pageMetadata(
   "Tecnología para restaurantes y empresas en Miami",
-  "Automatización, software, POS y redes para restaurantes, comercios y oficinas de Miami y South Florida.",
+  "Automatización, software, POS, redes y seguridad para restaurantes, comercios y oficinas de Miami y South Florida.",
   "/industrias/",
 );
+
 export default function Industries() {
   return (
     <>
-      <section className="container page-intro">
-        <span className="eyebrow">INDUSTRIAS / MIAMI + SOUTH FLORIDA</span>
-        <h1>
-          Tu negocio tiene
-          <br />
-          su propio ritmo.
-          <br />
-          <em>Lo conectamos.</em>
-        </h1>
-        <p>
-          Las herramientas cambian. El punto de partida es el mismo: entender
-          cómo funciona tu operación.
-        </p>
-        <div className="industry-list">
-          {[
-            {
-              name: "Restaurantes",
-              copy: "Consultas, reservas, POS, Wi-Fi y experiencia del cliente.",
-              Icon: UtensilsCrossed,
-              href: "/industrias/restaurantes/",
-            },
-            {
-              name: "Comercios y negocios locales",
-              copy: "Atención, seguimiento de oportunidades y herramientas de operación.",
-              Icon: Store,
-              href: "/contacto/",
-            },
-            {
-              name: "Oficinas y empresas en crecimiento",
-              copy: "Procesos, información compartida, infraestructura y soporte.",
-              Icon: Building2,
-              href: "/contacto/",
-            },
-          ].map((s) => (
-            <Link href={s.href} key={s.name}>
-              <s.Icon size={26} />
-              <div>
-                <h2>{s.name}</h2>
-                <p>{s.copy}</p>
-              </div>
-              <ArrowUpRight size={22} />
-            </Link>
-          ))}
+      <section className="page-hero">
+        <div className="container">
+          <p className="eyebrow">INDUSTRIAS / MIAMI + SOUTH FLORIDA</p>
+          <h1 style={{ marginTop: "var(--s-5)" }}>
+            Cada negocio tiene
+            <br />
+            su ritmo. <em>Lo conectamos.</em>
+          </h1>
+          <p className="lead">
+            Las herramientas cambian según el sector. El punto de partida es
+            siempre el mismo: entender cómo funciona tu operación un día normal.
+          </p>
+
+          <div className="industry-hero-list">
+            {sectors.map((s) => (
+              <Link href={s.href} key={s.slug}>
+                <Glyph name={s.icon} size={26} />
+                <div>
+                  <h2>{s.name}</h2>
+                  <p>{s.copy}</p>
+                </div>
+                <ArrowUpRight size={20} />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
-      <RestaurantSection />
-      <CTA />
+
+      <section className="plane plane-navy plane-grid">
+        <span className="plane-index">PLANO / EL LOCAL CONECTADO</span>
+        <div className="container">
+          <SectionHead
+            split
+            eyebrow="TODO EN UN MISMO PLANO"
+            title={
+              <>
+                Red, cobro, cámaras e IA
+                <br />
+                <em>no son proyectos aparte.</em>
+              </>
+            }
+            lead="Este es el plano de un local conectado. Explora cada capa para ver cómo se apoyan entre sí, en el orden en que conviene construirlas."
+          />
+          <VenueMap />
+        </div>
+      </section>
+
+      <CTA
+        title={
+          <>
+            Cuéntanos cómo funciona
+            <br />
+            tu negocio <em>hoy.</em>
+          </>
+        }
+        copy="Revisamos tu operación y te decimos con claridad qué conviene resolver primero y qué puede esperar."
+      />
     </>
   );
 }

@@ -1,41 +1,62 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { DatalinkNetwork } from "@/components/network/datalink-network";
+import { CoreSchematic } from "@/components/visuals/core-schematic";
+import { chain, contact, services } from "@/lib/content";
+
 export function Hero() {
   return (
-    <section className="hero-wrap">
-      <div className="container hero">
-        <div className="hero-copy">
-          <p className="eyebrow">
-            <span className="status-dot" /> INTELIGENCIA APLICADA A TU NEGOCIO
-          </p>
-          <h1>
-            Tecnología <span className="keep">e IA.</span>
-            <br />
-            Negocios que
-            <br />
-            <em>avanzan.</em>
-          </h1>
-          <p className="hero-description">
-            Automatizamos procesos, desarrollamos software y conectamos la
-            tecnología que impulsa el crecimiento de tu negocio.
-          </p>
-          <Link className="button button-primary" href="/contacto/">
-            Transforma tu negocio <ArrowUpRight size={18} />
-          </Link>
-          <a className="hero-secondary" href="#demo">
-            Descubre lo que podemos automatizar <ArrowDown size={15} />
-          </a>
+    <section className="hero">
+      <div className="container">
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <p className="eyebrow">TECNOLOGÍA E IA PARA NEGOCIOS QUE AVANZAN</p>
+
+            <h1>
+              <span>Seis frentes.</span>
+              <span>Un solo</span>
+              <span className="signal">aliado técnico.</span>
+            </h1>
+
+            <p className="hero-lead">
+              Automatización con IA, software a medida, marketing, redes,
+              seguridad y soporte. Todo lo que tu negocio necesita para operar
+              conectado, con un mismo equipo detrás.
+            </p>
+
+            <div className="hero-services">
+              {services.map((s) => (
+                <span key={s.slug}>{s.name}</span>
+              ))}
+            </div>
+
+            <div className="btn-row">
+              <Link className="btn btn-primary" href="/contacto/">
+                Solicita tu evaluación
+                <ArrowUpRight size={18} />
+              </Link>
+              <a className="link-arrow" href="#servicios">
+                Ver las seis soluciones
+                <ArrowDown size={15} />
+              </a>
+            </div>
+          </div>
+
+          <CoreSchematic />
         </div>
-        <DatalinkNetwork />
-        <div className="hero-bottom">
-          <span>MIAMI · SOUTH FLORIDA · CONECTADOS CONTIGO</span>
+
+        <div className="hero-meta">
           <span>
-            DATOS <i /> CONEXIÓN <i /> INTELIGENCIA <i /> CRECIMIENTO
+            <strong>{contact.region}</strong> · Atención en español e inglés
           </span>
-          <a href="#demo" aria-label="Descubrir la demo de IA">
-            <ArrowDown size={20} />
-          </a>
+          <span className="hero-meta-chain">
+            {chain.map((c, i) => (
+              <Fragment key={c.key}>
+                {i > 0 && <i aria-hidden="true" />}
+                {c.label}
+              </Fragment>
+            ))}
+          </span>
         </div>
       </div>
     </section>
