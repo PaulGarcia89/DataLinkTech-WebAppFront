@@ -1,53 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { siteUrl } from "@/lib/content";
 import { organizationSchema, pageMetadata, siteDescription } from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
 
-const heading = localFont({
-  src: [
-    {
-      path: "../../node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-  variable: "--font-heading",
-  display: "optional",
-  preload: true,
-});
-
-const body = localFont({
-  src: [
-    {
-      path: "../../node_modules/@fontsource/montserrat/files/montserrat-latin-400-normal.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../node_modules/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2",
-      weight: "600",
-      style: "normal",
-    },
-  ],
-  variable: "--font-body",
-  display: "swap",
-  preload: false,
-});
-
 import "./globals.css";
+import "@/styles/editorial.css";
 
 export const metadata: Metadata = {
   ...pageMetadata(
@@ -63,14 +22,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#050a12",
+  themeColor: "#f7f7f2",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${heading.variable} ${body.variable}`}>
+    <html lang="es">
       <body>
         <StructuredData data={organizationSchema} />
         <a className="skip-link" href="#contenido">

@@ -39,7 +39,7 @@ export function Header() {
         </nav>
 
         <Link className="btn btn-signal btn-sm header-cta" href="/contacto/">
-          Evaluación gratuita
+          Hablemos
           <ArrowUpRight size={16} />
         </Link>
 
@@ -61,6 +61,7 @@ export function Header() {
         className="nav-mobile"
         data-open={open ? "true" : "false"}
         aria-label="Navegación móvil"
+        hidden={!open}
       >
         {[{ href: "/", label: "Inicio" }, ...navigation].map((item) => (
           <Link

@@ -10,5 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "soluciones",
     "industrias",
     "industrias/restaurantes",
+    "industrias/warehouse",
   ].map((slug) => ({ url: `${siteUrl}/${slug}${slug ? "/" : ""}` }));
 }

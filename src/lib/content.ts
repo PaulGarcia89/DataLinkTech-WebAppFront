@@ -234,6 +234,19 @@ export const chain = [
 /** Sectores con los que trabaja DataLink. */
 export const sectors = [
   {
+    slug: "warehouse",
+    name: "Warehouse y logística",
+    copy: "Visión artificial aplicada al flujo de materiales, tiempos de ciclo y conteo de unidades.",
+    points: [
+      "Cámaras e IA",
+      "Flujo operativo",
+      "Tiempos de ciclo",
+      "Conteo de unidades",
+    ],
+    href: "/industrias/warehouse/",
+    icon: "office",
+  },
+  {
     slug: "restaurantes",
     name: "Restaurantes y hospitalidad",
     copy: "Punto de venta, reservas, Wi-Fi de salón, cámaras y respuesta automática a los mensajes que llegan fuera de hora.",

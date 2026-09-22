@@ -53,4 +53,4 @@ for path in pages:
             if not target.exists():
                 errors.append((str(path), href, 'Missing local destination'))
 print(json.dumps({'pages': len(pages), 'errors': errors}, indent=2))
-assert len(pages) == 12 and not errors
+assert len(pages) == 13 and not errors

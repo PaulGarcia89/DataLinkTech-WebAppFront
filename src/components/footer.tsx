@@ -77,11 +77,15 @@ export function Footer() {
             <div className="footer-col">
               <Link href="/soluciones/">Soluciones</Link>
               <Link href="/industrias/">Industrias</Link>
-              {sectors.slice(0, 1).map((s) => (
-                <Link key={s.slug} href={s.href}>
-                  {s.name}
-                </Link>
-              ))}
+              {sectors
+                .filter(
+                  (s) => s.slug === "warehouse" || s.slug === "restaurantes",
+                )
+                .map((s) => (
+                  <Link key={s.slug} href={s.href}>
+                    {s.name}
+                  </Link>
+                ))}
               <Link href="/nosotros/">Nosotros</Link>
               <Link href="/contacto/">Contacto</Link>
             </div>

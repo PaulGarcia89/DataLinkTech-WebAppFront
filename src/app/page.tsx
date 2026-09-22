@@ -1,24 +1,19 @@
 import { Hero } from "@/components/home/hero";
 import {
-  ChainSection,
-  MethodSection,
-  PillarsSection,
-  SectorsSection,
-  ServicesGrid,
-  Thesis,
-} from "@/components/home/sections";
+  EditorialServices,
+  EditorialOverview,
+  VisionSection,
+} from "@/components/home/editorial-sections";
+import { MethodSection } from "@/components/home/sections";
 import { CTA } from "@/components/footer";
-
 export default function Home() {
   return (
     <>
       <Hero />
-      <Thesis />
-      <ServicesGrid />
-      <ChainSection />
-      <SectorsSection />
+      <EditorialServices />
+      <EditorialOverview />
+      <VisionSection />
       <MethodSection />
-      <PillarsSection />
       <CTA />
     </>
   );

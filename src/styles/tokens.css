@@ -18,7 +18,7 @@
   --deep: #070e1a;
   --navy-deep: #08213f;
   --navy-soft: #123a6d;
-  --paper: #f4f6f8;
+  --paper: #f7f7f2;
   --ink: #0a1624;
 
   /* --- Variables de plano (las redefine cada sección) --- */
@@ -36,8 +36,8 @@
   --grid-line: #ffffff0a;
 
   /* --- Tipografía --- */
-  --font-display: var(--font-heading), "Poppins", system-ui, sans-serif;
-  --font-text: var(--font-body), "Montserrat", system-ui, sans-serif;
+  --font-display: "Helvetica Neue", Arial, sans-serif;
+  --font-text: "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", "Roboto Mono", Menlo, monospace;
 
   --fs-micro: 0.6875rem; /* 11px — etiquetas técnicas */
