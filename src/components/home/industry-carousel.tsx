@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 const slides = [
   {
     name: "Restaurante",
@@ -25,11 +25,61 @@ const slides = [
 ];
 export function IndustryCarousel() {
   const [active, setActive] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const root = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const respectPreference = () => {
+      if (preference.matches) setPlaying(false);
+    };
+    respectPreference();
+    preference.addEventListener("change", respectPreference);
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+    if (root.current) observer.observe(root.current);
+    return () => {
+      observer.disconnect();
+      preference.removeEventListener("change", respectPreference);
+    };
+  }, []);
+  const rotating = playing && !hovered && !focused && visible;
+  useEffect(() => {
+    if (!rotating) return;
+    let timer: ReturnType<typeof setTimeout>;
+    const schedule = () => {
+      clearTimeout(timer);
+      if (!document.hidden)
+        timer = setTimeout(
+          () => setActive((n) => (n + 1) % slides.length),
+          6000,
+        );
+    };
+    schedule();
+    document.addEventListener("visibilitychange", schedule);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("visibilitychange", schedule);
+    };
+  }, [rotating, active]);
   const start = useRef<{ x: number; y: number } | null>(null);
   const select = (n: number) => setActive((n + slides.length) % slides.length);
   return (
     <section
+      ref={root}
       className="industry-carousel"
+      onPointerEnter={(e) => {
+        if (e.pointerType === "mouse") setHovered(true);
+      }}
+      onPointerLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false);
+      }}
       aria-label="Aplicaciones de DataLink por industria"
       aria-roledescription="carrusel"
       onKeyDown={(e) => {
@@ -75,7 +125,11 @@ export function IndustryCarousel() {
         ))}
       </div>
       <div className="carousel-bottom">
-        <div className="carousel-caption" aria-live="polite" aria-atomic="true">
+        <div
+          className="carousel-caption"
+          aria-live={rotating ? "off" : "polite"}
+          aria-atomic="true"
+        >
           <Link href={slides[active].href}>
             {slides[active].caption} <ArrowRight size={15} />
           </Link>
@@ -110,6 +164,16 @@ export function IndustryCarousel() {
             onClick={() => select(active + 1)}
           >
             <ArrowRight size={19} />
+          </button>
+          <button
+            type="button"
+            aria-label={playing ? "Pausar carrusel" : "Reanudar carrusel"}
+            onClick={() => {
+              setPlaying(!playing);
+              setFocused(false);
+            }}
+          >
+            {playing ? <Pause size={17} /> : <Play size={17} />}
           </button>
           <span className="carousel-count" aria-hidden="true">
             {active + 1} / 2

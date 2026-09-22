@@ -14,7 +14,7 @@ Se conserva todo el encuadre disponible de cada fotografía en su lámina. No se
 
 ## Carrusel
 
-Dos diapositivas, una imagen visible cada vez. Flechas anterior/siguiente, selectores con estado accesible, teclas izquierda/derecha y detección de gesto horizontal en móvil. Sin reproducción automática. Altura natural, ancho adaptable y `object-fit: contain`: no se recorta la imagen para llenar el contenedor. Los pies de imagen llevan a la industria correspondiente.
+Dos diapositivas, una imagen visible cada vez. Flechas anterior/siguiente, selectores con estado accesible, teclas izquierda/derecha y detección de gesto horizontal en móvil. Reproducción automática cada 6 segundos, con pausa al pasar el cursor, enfocar controles, ocultar la pestaña o salir de pantalla. Botón de pausa/reanudación; movimiento reducido inicia en pausa. Marco estable y proporciones naturales, ancho adaptable y `object-fit: contain`: no se recorta la imagen para llenar el contenedor. Los pies de imagen llevan a la industria correspondiente.
 
 ## Alcance
 

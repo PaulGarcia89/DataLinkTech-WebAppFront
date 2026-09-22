@@ -588,7 +588,7 @@ em {
     justify-content: center;
   }
   .carousel-selectors button {
-    min-width: 85px;
+    min-width: 68px;
     flex: 1;
     max-width: 140px;
   }
@@ -775,4 +775,15 @@ em {
 }
 :focus-visible {
   outline-color: #0054cc;
+}
+
+/* Reserve the same frame for both slides to prevent automatic layout jumps. */
+.carousel-stage {
+  aspect-ratio: 749 / 377;
+  display: grid;
+  place-items: center;
+  background: #eeefea;
+}
+.carousel-stage > div {
+  width: 100%;
 }
