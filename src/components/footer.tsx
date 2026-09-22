@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { Logo } from './header';
+import { services, contact } from '@/lib/content';
+export function CTA() { return <section className="container cta"><div><span className="eyebrow">EL SIGUIENTE PASO EMPIEZA AQUÍ</span><h2>Tu próximo reto.<br/><span>Nuestra próxima solución.</span></h2></div><Link className="button button-lime" href="/contacto/">Conversemos <ArrowUpRight size={19}/></Link></section>; }
+export function Footer() { return <footer><div className="container footer-grid"><div><Logo/><p>Tecnología que conecta.<br/>Soluciones que te hacen avanzar.</p></div><div><h3>Soluciones</h3>{services.map(s => <Link key={s.slug} href={`/${s.slug}/`}>{s.name}</Link>)}</div><div><h3>Conócenos</h3><Link href="/nosotros/">Nosotros</Link><Link href="/contacto/">Contacto</Link><Link href="/#proceso">Cómo trabajamos</Link></div><div className="footer-note"><a href={`mailto:${contact.email}`}>{contact.email}</a><a href={`tel:${contact.tel}`}>{contact.phone}</a><span className="status-dot"/> Conectamos ideas con posibilidades.<p>Un aliado tecnológico para cada etapa de tu negocio.</p></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} DataLink Tech Corp</span><span>Diseñado para conectar. Construido para crecer.</span></div></footer>; }
