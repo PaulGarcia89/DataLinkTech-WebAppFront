@@ -6,6 +6,6 @@ export const services = [
   { slug: 'seguridad-y-control', name: 'Seguridad y Control', short: 'Más visibilidad. Mayor tranquilidad.', description: 'Integra herramientas de protección, monitoreo y control de acceso adaptadas a las necesidades de tu operación.', icon: 'ShieldCheck', tag: 'PROTECCIÓN INTEGRAL', items: ['Videovigilancia y monitoreo', 'Control de acceso', 'Configuración de seguridad y respaldos'] },
   { slug: 'soporte-it', name: 'Soporte IT', short: 'Tu equipo avanza. Nosotros te acompañamos.', description: 'Te ayudamos a resolver incidencias, mantener tus equipos y planificar mejoras para que la tecnología facilite el trabajo diario.', icon: 'Headset', tag: 'ACOMPAÑAMIENTO TECNOLÓGICO', items: ['Diagnóstico y resolución de incidencias', 'Mantenimiento preventivo', 'Asesoría y soporte remoto o presencial'] },
 ] as const;
-export const siteUrl = 'https://datalinkcorporation.com';
+export const siteUrl = 'https://www.datalinkcorporation.com';
 
 export const contact = { email: 'datalinkprotech@gmail.com', phone: '+1 (786) 402-2741', tel: '+17864022741', whatsapp: 'https://wa.me/17864022741' };
