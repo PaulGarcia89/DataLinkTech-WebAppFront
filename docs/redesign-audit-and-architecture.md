@@ -1,3 +1,5 @@
+> Documento histórico de las fases 1 y 2, anterior a la implementación. Para la entrega y pruebas del rediseño, consultar [redesign-qa.md](redesign-qa.md).
+
 # DATALINK — auditoría y arquitectura propuesta
 
 Fecha de revisión: 22 de septiembre de 2026. Base: commit `78881be` en `main`, sincronizado con `origin/main` al comenzar. Sitio revisado: https://www.datalinkcorporation.com/.

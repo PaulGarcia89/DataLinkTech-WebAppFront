@@ -1,0 +1,62 @@
+[
+  {
+    "run": 1,
+    "url": "https://www.datalinkcorporation.com/",
+    "lighthouseVersion": "13.5.0",
+    "fetchTime": "2026-09-22T04:19:20.735Z",
+    "scores": {
+      "performance": 89,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": "1.9 s",
+      "largest-contentful-paint": "3.2 s",
+      "total-blocking-time": "40 ms",
+      "cumulative-layout-shift": "0"
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  },
+  {
+    "run": 2,
+    "url": "https://www.datalinkcorporation.com/",
+    "lighthouseVersion": "13.5.0",
+    "fetchTime": "2026-09-22T04:19:33.894Z",
+    "scores": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": "0.9 s",
+      "largest-contentful-paint": "2.0 s",
+      "total-blocking-time": "20 ms",
+      "cumulative-layout-shift": "0"
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  },
+  {
+    "run": 3,
+    "url": "https://www.datalinkcorporation.com/",
+    "lighthouseVersion": "13.5.0",
+    "fetchTime": "2026-09-22T04:19:44.820Z",
+    "scores": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": "1.1 s",
+      "largest-contentful-paint": "2.1 s",
+      "total-blocking-time": "30 ms",
+      "cumulative-layout-shift": "0"
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  }
+]

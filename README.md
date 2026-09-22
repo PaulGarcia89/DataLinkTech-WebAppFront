@@ -17,6 +17,7 @@ npm run dev
 npm run lint
 npm run typecheck
 npm run build
+python3 scripts/audit-static.py
 ```
 
 La compilación genera `out/`. Para revisarla: `npm run preview`.
@@ -46,3 +47,5 @@ Los textos de servicios son una propuesta inicial y deben revisarse antes de pub
 Tokens: `src/styles/tokens.css`. Componentes por experiencia en `src/components/home`, `network`, `demo`, `solutions` e `industries`. Las páginas conservan renderizado estático y los controles usan estado local.
 
 La demo tiene dos escenarios, reproducción, pausa, avance manual y reinicio. Se pausa fuera de pantalla o en pestañas ocultas; con movimiento reducido utiliza avance manual. Las capas del restaurante y la comparación son modelos conceptuales, sin conexión a sistemas reales. Las transiciones de scroll usan CSS con contenido estático de respaldo.
+
+Informe de implementación y pruebas: [docs/redesign-qa.md](docs/redesign-qa.md).
