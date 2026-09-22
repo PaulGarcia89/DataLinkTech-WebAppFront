@@ -15,7 +15,8 @@ export function BrandLogo({ priority = false }: { priority?: boolean }) {
           width={2172}
           height={724}
           sizes="180px"
-          priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority="low"
         />
       </span>
       <span className="brand-word">

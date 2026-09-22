@@ -2387,7 +2387,7 @@ textarea {
 }
 @keyframes section-arrival {
   from {
-    opacity: 0.7;
+    opacity: 1;
     transform: translateY(24px);
   }
   to {
