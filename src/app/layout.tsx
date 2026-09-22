@@ -19,7 +19,7 @@ const heading = localFont({
     },
   ],
   variable: "--font-heading",
-  display: "swap",
+  display: "optional",
   preload: true,
 });
 const body = localFont({
