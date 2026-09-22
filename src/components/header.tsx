@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { LanguageSwitch } from "@/i18n/language-switch";
 import { BrandLogo } from "./brand-logo";
 import { navigation, services } from "@/lib/content";
 
@@ -42,6 +43,8 @@ export function Header() {
           Hablemos
           <ArrowUpRight size={16} />
         </Link>
+
+        <LanguageSwitch locale="es" />
 
         <button
           ref={toggle}

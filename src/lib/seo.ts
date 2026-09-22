@@ -1,3 +1,4 @@
+import { languagePaths } from "@/i18n/paths";
 import type { Metadata } from "next";
 import { contact, siteUrl } from "./content";
 
@@ -12,7 +13,7 @@ export function pageMetadata(
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, languages: languagePaths(path) },
     openGraph: {
       title,
       description,

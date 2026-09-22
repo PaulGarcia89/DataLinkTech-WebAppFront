@@ -11,5 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "industrias",
     "industrias/restaurantes",
     "industrias/warehouse",
-  ].map((slug) => ({ url: `${siteUrl}/${slug}${slug ? "/" : ""}` }));
+  ].flatMap((slug) => {
+    const route = `/${slug}${slug ? "/" : ""}`;
+    const languages = { es: `${siteUrl}${route}`, en: `${siteUrl}/en${route}` };
+    return [languages.es, languages.en].map((url) => ({
+      url,
+      alternates: { languages },
+    }));
+  });
 }

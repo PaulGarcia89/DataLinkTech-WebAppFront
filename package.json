@@ -7,7 +7,11 @@
     "build": "next build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "preview": "npx serve out"
+    "preview": "npx serve out",
+    "i18n:generate": "node scripts/i18n/generate.mjs",
+    "predev": "npm run i18n:generate",
+    "prebuild": "npm run i18n:generate",
+    "pretypecheck": "npm run i18n:generate"
   },
   "repository": {
     "type": "git",

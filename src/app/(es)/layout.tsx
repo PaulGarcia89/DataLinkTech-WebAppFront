@@ -5,7 +5,7 @@ import { siteUrl } from "@/lib/content";
 import { organizationSchema, pageMetadata, siteDescription } from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
 
-import "./globals.css";
+import "@/app/globals.css";
 import "@/styles/editorial.css";
 
 export const metadata: Metadata = {

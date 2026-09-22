@@ -52,3 +52,17 @@ Cada sección declara un plano (`plane-deep`, `plane-navy`, `plane-paper`, `plan
 El formulario prepara un correo mediante `mailto:` y requiere una aplicación de correo configurada. El visitante lo revisa y lo envía desde allí. No existe un backend de envío ni almacenamiento de consultas. Los enlaces a WhatsApp y teléfono ofrecen alternativas directas. Se puede reemplazar el receptor con `NEXT_PUBLIC_CONTACT_EMAIL` al compilar.
 
 Los textos son una propuesta y deben revisarse antes de publicar. No se incluyen cifras comerciales, plazos ni testimonios inventados. La configuración incluye títulos por página, datos estructurados, sitemap, robots, página 404, navegación móvil y respeto a la preferencia de movimiento reducido.
+
+### Idiomas
+
+El contenido fuente en español vive en `src/app/(es)`, `src/components` y
+`src/lib`. Las traducciones revisadas están en `src/i18n/en.json`.
+`npm run i18n:generate` genera las páginas `/en/` y sus componentes a partir
+del mismo código; se ejecuta automáticamente antes de `dev`, `build` y
+`typecheck`. No editar `src/generated` ni `src/app/en` directamente.
+
+El selector conserva la página actual. Cada idioma tiene su atributo `lang`,
+metadatos, canonical y enlaces `hreflang`; el sitemap incluye ambas versiones.
+Después de cambiar textos, actualizar el diccionario y comprobar que no queden
+textos españoles en las páginas inglesas. Validar con `npm run lint`,
+`npm run build` y `python3 scripts/audit-static.py`.

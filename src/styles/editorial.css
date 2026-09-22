@@ -787,3 +787,79 @@ em {
 .carousel-stage > div {
   width: 100%;
 }
+
+/* Keep every navigation state legible on the light editorial header. */
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[aria-current="page"],
+.nav-mobile a[aria-current="page"] {
+  color: #0054cc;
+}
+.nav-link[aria-current="page"]::after,
+.nav-link:hover::after {
+  background: #0054cc;
+}
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 10px;
+  flex-shrink: 0;
+  color: #123047;
+  border: 1px solid #bdcbd6;
+  font-size: 12px;
+  font-weight: 600;
+}
+.language-switch:hover {
+  color: #0054cc;
+  border-color: #0054cc;
+}
+.language-switch:focus-visible {
+  outline: 2px solid #0054cc;
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .header-inner {
+    gap: 10px;
+  }
+  .language-switch {
+    margin-left: auto;
+    padding-inline: 7px;
+    gap: 5px;
+  }
+}
+.nav-mobile a:not(.btn) {
+  color: #24394d;
+  border-color: #d4dbe0;
+}
+.nav-mobile a:not(.btn):hover,
+.nav-mobile a:not(.btn):focus-visible,
+.nav-mobile a:not(.btn)[aria-current="page"] {
+  color: #0054cc;
+}
+.nav-mobile a:not(.btn) svg {
+  color: #0054cc;
+}
+.nav-mobile a.btn {
+  color: #fff;
+}
+@media (max-width: 359px) {
+  .header-inner .brand {
+    gap: 6px;
+  }
+  .header-inner .brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+  .header-inner .brand-type b {
+    font-size: 17px;
+  }
+  .header-inner .brand-type small {
+    font-size: 8px;
+  }
+  .header-inner {
+    gap: 7px;
+  }
+}
