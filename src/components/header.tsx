@@ -1,12 +1,80 @@
-'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
-import { services } from '@/lib/content';
-export function Logo() { return <Link href="/" className="logo" aria-label="DataLink Tech Corp, inicio"><Image src="/datalink-logo.png" alt="DataLink Tech Corp — Ideas conectadas a tu crecimiento" width={2172} height={724} priority /></Link>; }
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRef, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { BrandLogo } from "./brand-logo";
+
+const navigation = [
+  { href: "/soluciones/", label: "Soluciones" },
+  { href: "/ia-y-automatizacion/", label: "IA & Automatización" },
+  { href: "/industrias/", label: "Industrias" },
+  { href: "/nosotros/", label: "Nosotros" },
+];
 export function Header() {
- const [open, setOpen] = useState(false); const pathname = usePathname();
- return <header className="site-header"><div className="container header-inner"><Logo/><nav className="desktop-nav" aria-label="Navegación principal"><Link className={pathname === '/' ? 'active' : ''} href="/">Inicio</Link><div className="nav-dropdown"><button type="button">Soluciones <ChevronDown size={13}/></button><div className="dropdown-panel">{services.map(s => <Link key={s.slug} href={`/${s.slug}/`}>{s.name}</Link>)}</div></div><Link href="/nosotros/" className={pathname.includes('nosotros') ? 'active' : ''}>Nosotros</Link></nav><Link href="/contacto/" className="button header-cta">Hablemos de tu proyecto <ArrowUpRight size={16}/></Link><button className="menu-toggle" aria-label={open ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button></div>{open && <nav id="mobile-nav" className="mobile-nav" aria-label="Navegación móvil">{[{slug:'', name:'Inicio'}, ...services, {slug:'nosotros',name:'Nosotros'}, {slug:'contacto',name:'Contacto'}].map(s => <Link key={s.slug} href={`/${s.slug}${s.slug ? '/' : ''}`} onClick={() => setOpen(false)}>{s.name}<ArrowUpRight size={16}/></Link>)}</nav>}</header>;
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  return (
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open) {
+          setOpen(false);
+          toggle.current?.focus();
+        }
+      }}
+    >
+      <div className="container header-inner">
+        <BrandLogo priority />
+        <nav className="desktop-nav" aria-label="Navegación principal">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href ? "page" : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <Link className="button button-small header-cta" href="/contacto/">
+          Hablemos <ArrowUpRight size={17} />
+        </Link>
+        <button
+          ref={toggle}
+          className="menu-toggle"
+          type="button"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
+      <nav
+        id="mobile-nav"
+        className="mobile-nav"
+        hidden={!open}
+        aria-label="Navegación móvil"
+      >
+        {[
+          { href: "/", label: "Inicio" },
+          ...navigation,
+          { href: "/contacto/", label: "Contacto" },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-current={pathname === item.href ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
+            {item.label}
+            <ArrowUpRight size={18} />
+          </Link>
+        ))}
+      </nav>
+    </header>
+  );
 }

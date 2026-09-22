@@ -1,6 +1,6 @@
 # DataLink Tech Corp
 
-Web corporativa en español con Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion y Lucide. Diseño adaptable con nueve páginas y exportación estática para Cloudflare Pages.
+Web corporativa en español con Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion y Lucide. Diseño adaptable con doce páginas y exportación estática publicada en Vercel.
 
 ## Desarrollo
 
@@ -21,19 +21,13 @@ npm run build
 
 La compilación genera `out/`. Para revisarla: `npm run preview`.
 
-En Cloudflare, crear un proyecto de **Pages**, conectar `PaulGarcia89/DataLinkTech-WebAppFront` y seleccionar la rama que contenga este código. Configurar:
+La rama `main` despliega producción en Vercel, proyecto `data-link-tech-web-app-front`. Las ramas de trabajo generan previews antes de promover cambios. Next.js genera `out/` con `npm run build`.
 
-- Comando de compilación: `npm run build`
-- Directorio de salida: `out`
-- Node.js: `22`
-
-Después de verificar el despliegue de prueba, agregar `datalinkcorporation.com` en los dominios personalizados del proyecto Pages y seguir el asistente DNS de Cloudflare. El registro del dominio por sí solo no publica la aplicación.
-
-Referencia: https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/
+El dominio se administra en Cloudflare y apunta a Vercel. Sitio público: https://www.datalinkcorporation.com/.
 
 ## Páginas
 
-`/`, `/ia-y-automatizacion/`, `/marketing-digital/`, `/software-a-medida/`, `/redes-e-infraestructura/`, `/seguridad-y-control/`, `/soporte-it/`, `/nosotros/`, `/contacto/`.
+`/`, `/soluciones/`, `/industrias/`, `/industrias/restaurantes/`, `/ia-y-automatizacion/`, `/marketing-digital/`, `/software-a-medida/`, `/redes-e-infraestructura/`, `/seguridad-y-control/`, `/soporte-it/`, `/nosotros/`, `/contacto/`.
 
 ## Contenido y contacto
 
@@ -46,3 +40,9 @@ Referencia: https://developers.cloudflare.com/pages/framework-guides/nextjs/depl
 El formulario prepara un correo mediante `mailto:` y requiere una aplicación de correo configurada. El visitante lo revisa y lo envía desde allí. No existe un backend de envío ni almacenamiento de consultas. Los enlaces a WhatsApp y teléfono ofrecen alternativas directas. Se puede reemplazar el receptor con `NEXT_PUBLIC_CONTACT_EMAIL` al compilar.
 
 Los textos de servicios son una propuesta inicial y deben revisarse antes de publicar. No se incluyen cifras comerciales ni testimonios inventados. La configuración incluye títulos por página, sitemap, robots, página 404, navegación móvil y respeto a la preferencia de movimiento reducido.
+
+## Rediseño y controles
+
+Tokens: `src/styles/tokens.css`. Componentes por experiencia en `src/components/home`, `network`, `demo`, `solutions` e `industries`. Las páginas conservan renderizado estático y los controles usan estado local.
+
+La demo tiene dos escenarios, reproducción, pausa, avance manual y reinicio. Se pausa fuera de pantalla o en pestañas ocultas; con movimiento reducido utiliza avance manual. Las capas del restaurante y la comparación son modelos conceptuales, sin conexión a sistemas reales. Las transiciones de scroll usan CSS con contenido estático de respaldo.

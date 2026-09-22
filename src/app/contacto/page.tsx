@@ -1,5 +1,48 @@
-import { pageMetadata } from '@/lib/seo';
-import { contact } from '@/lib/content';
-import { ContactForm } from '@/components/contact-form';
-export const metadata = pageMetadata('Contacto', 'Cuéntanos tu proyecto y exploremos una solución tecnológica para tu negocio.', '/contacto/');
-export default function Contact() { return <section className="container section contact-grid"><div><span className="eyebrow">CONECTEMOS IDEAS</span><h1>Todo comienza <br/>con una <br/><span>conversación.</span></h1><p>Cuéntanos qué necesitas resolver o qué te gustaría construir. Juntos podemos definir el siguiente paso.</p><div className="contact-links"><a href={`mailto:${contact.email}`}>{contact.email}</a><a href={`tel:${contact.tel}`}>{contact.phone}</a><a className="button" href={contact.whatsapp} target="_blank" rel="noopener noreferrer">Conversar por WhatsApp ↗</a></div><div className="contact-note"><span className="status-dot"/><span>Tu proyecto, con atención personal.<small>Comparte el contexto que nos ayude a entender tu idea.</small></span></div></div><ContactForm/></section>; }
+import { pageMetadata } from "@/lib/seo";
+import { contact } from "@/lib/content";
+import { ContactForm } from "@/components/contact-form";
+export const metadata = pageMetadata(
+  "Contacto",
+  "Cuéntanos tu proyecto y exploremos una solución tecnológica para tu negocio.",
+  "/contacto/",
+);
+export default function Contact() {
+  return (
+    <section className="container section contact-grid">
+      <div>
+        <span className="eyebrow">CONECTEMOS IDEAS</span>
+        <h1>
+          Todo comienza <br />
+          con una <br />
+          <span>conversación.</span>
+        </h1>
+        <p>
+          Cuéntanos qué necesitas resolver o qué te gustaría construir. Juntos
+          podemos definir el siguiente paso.
+        </p>
+        <div className="contact-links">
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <a href={`tel:${contact.tel}`}>{contact.phone}</a>
+          <a
+            className="button"
+            href={contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conversar por WhatsApp ↗
+          </a>
+        </div>
+        <div className="contact-note">
+          <span className="status-dot" />
+          <span>
+            Tu proyecto, con atención personal.
+            <small>
+              Comparte el contexto que nos ayude a entender tu idea.
+            </small>
+          </span>
+        </div>
+      </div>
+      <ContactForm />
+    </section>
+  );
+}
