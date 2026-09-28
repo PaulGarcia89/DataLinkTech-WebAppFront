@@ -1,8 +1,17 @@
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import {
+  ArrowUpRight,
+  Clock3,
+  MapPin,
+  Mail,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 import { contact, method } from "@/lib/content";
 import { Consultation } from "@/components/consultation";
 import { ContactForm } from "@/components/contact-form";
+
+import { businessProfile } from "@/i18n/business-profile";
 
 export const metadata = pageMetadata(
   "Contacto",
@@ -72,6 +81,53 @@ export default function Contact() {
 
         <ContactForm />
       </div>
+      <aside
+        className="container google-profile"
+        aria-labelledby="google-profile-title"
+      >
+        <div>
+          <p className="eyebrow">CERCA DE TU NEGOCIO</p>
+          <h2 id="google-profile-title">DataLink también en Google.</h2>
+          <p>
+            Consulta nuestra ficha, fotografías de instalaciones y experiencias
+            compartidas por clientes.
+          </p>
+          <a
+            className="btn btn-signal"
+            href={businessProfile.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver perfil en Google <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+        </div>
+        <div className="google-profile-details">
+          <p>
+            <MapPin size={20} aria-hidden="true" />
+            <span>
+              Atención remota y visitas a las instalaciones del cliente en
+              Florida. Sin local de atención al público.
+            </span>
+          </p>
+          <p>
+            <Clock3 size={20} aria-hidden="true" />
+            <span>Todos los días, de 8 AM a 10 PM (hora de Miami).</span>
+          </p>
+          <div className="google-profile-review">
+            <h3>¿Ya trabajaste con nosotros?</h3>
+            <p>
+              Comparte tu experiencia para ayudar a otros negocios a conocernos.
+            </p>
+            <a
+              href={businessProfile.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Escribir una reseña <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </aside>
     </section>
   );
 }

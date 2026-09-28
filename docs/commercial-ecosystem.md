@@ -18,7 +18,16 @@ Sitio de producción: https://www.datalinkcorporation.com/
 ## Pendiente de datos o cuentas
 
 - Meta Pixel: ID de píxel del negocio, consentimiento de marketing y comprobación en Events Manager. No contar la apertura de mailto o WhatsApp como una venta ni una consulta recibida.
-- Google Business Profile: confirmar existencia de ficha, nombre, categoría, área de servicio o dirección, horario y realizar la verificación que Google solicite.
 - Correo corporativo: elegir proveedor y buzones antes de añadir MX, SPF, DKIM y DMARC. No crear registros DNS de un proveedor sin confirmar.
 
 Las variables configuradas en Vercel necesitan un nuevo despliegue para aplicarse. No registrar conversiones ficticias ni activar identificadores de ejemplo.
+
+## Google Business Profile — actualizado el 28 de septiembre de 2026
+
+- Ficha existente verificada, antes DataLinkPro LLC, actualizada a DataLink Tech Corp (misma empresa, confirmado por el propietario).
+- Teléfono, WhatsApp, web y reservas conectados; horario diario 8 AM–10 PM, hora de Miami.
+- Servicio remoto y presencial en instalaciones de clientes en Florida; sin local público.
+- Categoría adicional y servicios enviados a revisión. Fotografías reales y logo enviados; portada pendiente de revisión al último control.
+- Perfil público: https://www.google.com/maps/place/DataLink+Tech+Corp/data=!4m2!3m1!1s0x0:0x20eb01d65549318f
+- Enlace oficial para reseñas: https://g.page/r/CY8xSVXWAesgEBM/review
+- Contacto y pie enlazan la ficha; Organization.sameAs usa el perfil público. No se publican valoraciones o testimonios inventados.

@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, MapPin, Mail, MessageCircle, Phone } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
 import { brand, contact, sectors, services } from "@/lib/content";
+
+import { businessProfile } from "@/i18n/business-profile";
 
 export function CTA({
   title = (
@@ -64,7 +66,9 @@ export function Footer() {
           <div>
             <h3>Soluciones</h3>
             <div className="footer-col">
-              <Link href="/medicion-de-productividad/">Productividad con IA</Link>
+              <Link href="/medicion-de-productividad/">
+                Productividad con IA
+              </Link>
               {services.map((s) => (
                 <Link key={s.slug} href={`/${s.slug}/`}>
                   {s.name}
@@ -111,6 +115,15 @@ export function Footer() {
                 <MessageCircle size={15} />
                 WhatsApp
                 <ArrowUpRight size={12} />
+              </a>
+              <a
+                href={businessProfile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin size={15} aria-hidden="true" />
+                Perfil en Google
+                <ArrowUpRight size={12} aria-hidden="true" />
               </a>
             </div>
           </div>

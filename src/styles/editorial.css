@@ -1339,10 +1339,17 @@ em {
 }
 
 /* Keep the new service easy to find without crowding intermediate screens. */
-.nav-link { white-space: nowrap; }
+.nav-link {
+  white-space: nowrap;
+}
 @media (max-width: 1200px) {
-  .nav-desktop, .header-cta { display: none; }
-  .menu-btn { display: inline-flex; }
+  .nav-desktop,
+  .header-cta {
+    display: none;
+  }
+  .menu-btn {
+    display: inline-flex;
+  }
 }
 .productivity-feature {
   display: grid;
@@ -1351,16 +1358,84 @@ em {
   padding-block: 40px;
   border-block: 1px solid #bdcbd6;
 }
-.productivity-feature h2 { margin-block: 16px; }
-.productivity-feature .btn { margin-top: 24px; }
-.productivity-feature-metrics { align-self: center; }
+.productivity-feature h2 {
+  margin-block: 16px;
+}
+.productivity-feature .btn {
+  margin-top: 24px;
+}
+.productivity-feature-metrics {
+  align-self: center;
+}
 .productivity-feature-metrics p {
   display: flex;
   gap: 24px;
   padding-block: 20px;
   border-bottom: 1px solid #bdcbd6;
 }
-.productivity-feature-metrics strong { color: #0054cc; }
+.productivity-feature-metrics strong {
+  color: #0054cc;
+}
 @media (max-width: 700px) {
-  .productivity-feature { grid-template-columns: 1fr; gap: 24px; }
+  .productivity-feature {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Local presence, without implying a public storefront. */
+.google-profile {
+  margin-top: clamp(48px, 7vw, 96px);
+  padding-top: 40px;
+  border-top: 1px solid #aab9c7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 6vw, 80px);
+  color: #102942;
+}
+.google-profile h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 12px 0 20px;
+}
+.google-profile p {
+  color: #516273;
+  line-height: 1.65;
+}
+.google-profile .btn {
+  margin-top: 24px;
+}
+.google-profile-details > p {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.google-profile-details svg {
+  flex-shrink: 0;
+  color: #0054cc;
+  margin-top: 3px;
+}
+.google-profile-review {
+  border-top: 1px solid #d4dbe0;
+  padding-top: 24px;
+}
+.google-profile-review h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.google-profile-review a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0054cc;
+  font-weight: 600;
+  margin-top: 16px;
+}
+.google-profile-review a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .google-profile {
+    grid-template-columns: 1fr;
+  }
 }

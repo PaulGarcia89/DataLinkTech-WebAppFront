@@ -1,3 +1,4 @@
+import { businessProfile } from "@/i18n/business-profile";
 import { searchContent } from "./search-content";
 import { languagePaths } from "@/i18n/paths";
 import type { Metadata } from "next";
@@ -68,7 +69,8 @@ export const organizationSchema = {
   email: contact.email,
   telephone: contact.tel,
   description: siteDescription,
-  areaServed: ["Miami", "South Florida"],
+  areaServed: ["Florida"],
+  sameAs: [businessProfile.url],
   slogan: "Tecnología que impulsa tu negocio",
   contactPoint: {
     "@type": "ContactPoint",
