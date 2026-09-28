@@ -1,6 +1,7 @@
 # Medición de contactos
 
 Estado: GA4 configurado en una propiedad separada para datalinkcorporation.com.
+Propiedad: `556307181`.
 Identificador público: `G-S9WVMKHH03`, flujo `15862069721`.
 Zona horaria New York; moneda USD. Medición mejorada desactivada para evitar
 captura automática de formularios, URLs y eventos duplicados.
@@ -27,8 +28,11 @@ contacto se reenvían solo con consentimiento guardado. El evento DOM local
 Solo se transmiten nombre fijo del evento, ruta sin query/hash e idioma.
 Nunca se incluyen nombre, email, teléfono, mensaje o valores del formulario.
 
-Validación: comprobar visitas en Tiempo real y contact_form_success como evento
-clave. Abrir el calendario NO representa una reserva confirmada. No enviar
+Validación del 28 de septiembre de 2026: página publicada, etiqueta ausente antes
+del consentimiento y presente después de aceptar; Analytics mostró 1 usuario
+activo en los últimos 30 minutos durante la comprobación. `contact_form_success`
+creado como evento clave, una vez por evento y sin valor monetario predeterminado.
+No se generó un envío de formulario adicional para esta validación. Abrir el calendario NO representa una reserva confirmada. No enviar
 consultas de prueba adicionales sin autorización. Los bloqueadores de anuncios
 y el rechazo del consentimiento reducen la cantidad de visitas medidas.
 
