@@ -616,5 +616,8 @@
   "Comparar intervalos de actividad, salida y acumulación entre estaciones.": "Compare activity intervals, output, and buildup between stations.",
   "Contrastar los datos con producción y mantenimiento antes de ajustar el proceso.": "Review the data with production and maintenance teams before adjusting the process.",
   "Un seguimiento del ritmo de la línea y un reporte de pausas y acumulaciones.": "Line pace tracking and a report of pauses and buildups.",
-  "El alcance depende de tus sistemas y del proceso. En visión artificial, acordamos permisos, acceso y uso de imágenes; los indicadores requieren validación humana. Los ejemplos describen procesos y zonas, sin identificar personas ni asignar puntuaciones individuales de desempeño.": "Scope depends on your systems and process. For computer vision, we agree on permissions, access, and image use; metrics require human validation. Examples describe processes and zones without identifying people or assigning individual performance scores."
+  "El alcance depende de tus sistemas y del proceso. En visión artificial, acordamos permisos, acceso y uso de imágenes; los indicadores requieren validación humana. Los ejemplos describen procesos y zonas, sin identificar personas ni asignar puntuaciones individuales de desempeño.": "Scope depends on your systems and process. For computer vision, we agree on permissions, access, and image use; metrics require human validation. Examples describe processes and zones without identifying people or assigning individual performance scores.",
+  "Ejemplo anterior": "Previous example",
+  "Ejemplo siguiente": "Next example",
+  "Reproducir carrusel": "Play carousel"
 }
