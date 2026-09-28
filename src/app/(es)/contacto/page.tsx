@@ -1,6 +1,7 @@
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
 import { contact, method } from "@/lib/content";
+import { Consultation } from "@/components/consultation";
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata = pageMetadata(
@@ -56,6 +57,8 @@ export default function Contact() {
               </span>
             </a>
           </div>
+
+          <Consultation />
 
           <ul className="rule-list" style={{ marginTop: "var(--s-4)" }}>
             {method.map((m) => (

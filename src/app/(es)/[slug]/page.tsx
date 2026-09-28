@@ -9,6 +9,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHead } from "@/components/home/sections";
 import { StructuredData } from "@/components/structured-data";
 import { VenueMap } from "@/components/visuals/venue-map";
+import { ServiceFAQ } from "@/components/service-faq";
 import { CTA } from "@/components/footer";
 
 export const dynamicParams = false;
@@ -239,6 +240,7 @@ export default async function ServicePage({
         </div>
       </section>
 
+      <ServiceFAQ slug={slug} />
       <CTA />
     </>
   );

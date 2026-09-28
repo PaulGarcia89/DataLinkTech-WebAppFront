@@ -863,3 +863,85 @@ em {
     gap: 7px;
   }
 }
+
+.faq-section {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+}
+.faq-section h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+}
+.faq-list details {
+  border-top: 1px solid #bdcbd6;
+}
+.faq-list details:last-child {
+  border-bottom: 1px solid #bdcbd6;
+}
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary svg {
+  flex-shrink: 0;
+  color: #0054cc;
+}
+.faq-list details[open] summary svg {
+  transform: rotate(45deg);
+}
+.faq-list summary:focus-visible {
+  outline: 2px solid #0054cc;
+  outline-offset: 4px;
+}
+.faq-list p {
+  margin: 0 0 24px;
+  color: #43586a;
+  line-height: 1.7;
+}
+@media (max-width: 767px) {
+  .faq-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+.consultation-card {
+  padding: 28px;
+  margin-top: 32px;
+  border: 1px solid #bdcbd6;
+  background: #fff;
+}
+.consultation-card > svg {
+  color: #0054cc;
+  margin-bottom: 16px;
+}
+.consultation-card h2 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+.consultation-card p {
+  margin: 16px 0 22px;
+  color: #43586a;
+}
+.consultation-card small {
+  display: block;
+  margin-top: 14px;
+  line-height: 1.6;
+  color: #43586a;
+}
+.consultation-card .btn {
+  white-space: normal;
+}
+.form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
