@@ -100,3 +100,21 @@ Usar Inspección de URLs y Rich Results Test para la perspectiva de Google.
 - https://support.google.com/webmasters/answer/9008080
 - https://support.google.com/business/answer/7091
 - https://developers.google.com/search/docs/appearance/structured-data/organization
+
+## Estado comprobado en Search Console el 28 de septiembre
+
+- La propiedad de dominio es accesible con la cuenta empresarial existente.
+  No fue necesario modificar DNS ni crear otra propiedad de prefijo.
+- Sitemap ya enviado el 21 de septiembre: estado Success, última lectura
+  27 de septiembre, 26 URLs descubiertas. No se duplicó el envío.
+- El informe agregado (fecha mostrada 20 de septiembre) tenía 0 indexadas,
+  3 rastreadas sin indexar y 1 con redirección. Es un informe atrasado:
+  la Inspección de URL individual confirmó que la portada canónica SÍ está
+  indexada y puede aparecer en Google.
+- La URL con redirección es https://datalinkcorporation.com/; es correcto que
+  Google indexe su destino con www en lugar de indexar ambas versiones.
+- Google confirmó «Indexing requested» para la portada después del despliegue;
+  la URL quedó añadida a su cola prioritaria de rastreo.
+  No se debe confundir esta solicitud con una garantía de posición o de plazo.
+- No se afirma que todas las 26 URLs estén indexadas: descubrimiento en sitemap
+  y presencia efectiva en el índice son estados diferentes.
