@@ -327,6 +327,7 @@ export const pillars = [
 ] as const;
 
 export const navigation = [
+  { href: "/medicion-de-productividad/", label: "Productividad con IA" },
   { href: "/soluciones/", label: "Soluciones" },
   { href: "/industrias/", label: "Industrias" },
   { href: "/nosotros/", label: "Nosotros" },

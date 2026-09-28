@@ -32,7 +32,7 @@ export function Header() {
               key={item.href}
               className="nav-link"
               href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
+              aria-current={pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "") ? "page" : undefined}
             >
               {item.label}
             </Link>
@@ -70,7 +70,7 @@ export function Header() {
           <Link
             key={item.href}
             href={item.href}
-            aria-current={pathname === item.href ? "page" : undefined}
+            aria-current={pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "") ? "page" : undefined}
             onClick={() => setOpen(false)}
           >
             {item.label}

@@ -40,6 +40,21 @@ export default function Solutions() {
         </div>
       </section>
 
+      <section className="container productivity-feature" aria-labelledby="productivity-feature-title">
+        <div>
+          <p className="eyebrow">CÁMARAS + INTELIGENCIA ARTIFICIAL</p>
+          <h2 id="productivity-feature-title">Productividad con IA</h2>
+          <p>Conoce los conteos, tiempos y flujos que puedes analizar en cafeterías, restaurantes, almacenes y líneas de producción.</p>
+          <Link className="btn btn-primary" href="/medicion-de-productividad/">
+            Ver cómo funciona <ArrowUpRight size={18} />
+          </Link>
+        </div>
+        <div className="productivity-feature-metrics" aria-label="Indicadores del proceso">
+          <p><strong>01</strong> Conteo de unidades</p>
+          <p><strong>02</strong> Tiempos de ciclo</p>
+          <p><strong>03</strong> Flujo por zonas</p>
+        </div>
+      </section>
       <ServicesGrid />
       <ChainSection />
       <MethodSection />

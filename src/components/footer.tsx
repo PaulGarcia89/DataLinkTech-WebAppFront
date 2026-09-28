@@ -64,6 +64,7 @@ export function Footer() {
           <div>
             <h3>Soluciones</h3>
             <div className="footer-col">
+              <Link href="/medicion-de-productividad/">Productividad con IA</Link>
               {services.map((s) => (
                 <Link key={s.slug} href={`/${s.slug}/`}>
                   {s.name}
