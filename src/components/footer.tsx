@@ -92,6 +92,7 @@ export function Footer() {
                   </Link>
                 ))}
               <Link href="/nosotros/">Nosotros</Link>
+              <Link href="/guias/">Guías</Link>
               <Link href="/contacto/">Contacto</Link>
             </div>
           </div>

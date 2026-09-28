@@ -31,3 +31,9 @@ Las variables configuradas en Vercel necesitan un nuevo despliegue para aplicars
 - Perfil público: https://www.google.com/maps/place/DataLink+Tech+Corp/data=!4m2!3m1!1s0x0:0x20eb01d65549318f
 - Enlace oficial para reseñas: https://g.page/r/CY8xSVXWAesgEBM/review
 - Contacto y pie enlazan la ficha; Organization.sameAs usa el perfil público. No se publican valoraciones o testimonios inventados.
+
+## Servicios, guías y seguimiento comercial
+
+- Los seis servicios incluyen entregables, requisitos del cliente, implementación y límites de la propuesta.
+- Tres guías bilingües en /guias/: cámaras existentes, Wi-Fi para restaurantes y visión artificial en almacenes. Incluidas en sitemap, navegación y datos estructurados Article/BreadcrumbList.
+- Registro privado manual en tools/oportunidades; iniciar según su README. Datos guardados solo en el navegador local; respaldos JSON y exportación CSV. No se publica ni sincroniza con Formspree.

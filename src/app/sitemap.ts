@@ -4,6 +4,11 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
+    "guias",
+    "guias/productividad-camaras-existentes",
+    "guias/wifi-restaurantes",
+    "guias/vision-artificial-almacenes",
+
     ...services.map((s) => s.slug),
     "nosotros",
     "contacto",

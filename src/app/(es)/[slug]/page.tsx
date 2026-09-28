@@ -12,6 +12,8 @@ import { VenueMap } from "@/components/visuals/venue-map";
 import { ServiceFAQ } from "@/components/service-faq";
 import { CTA } from "@/components/footer";
 
+import { ServiceScope } from "@/components/service-scope";
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -142,6 +144,8 @@ export default async function ServicePage({
           </Reveal>
         </div>
       </section>
+
+      <ServiceScope slug={slug} />
 
       {/* --- Qué cambia --- */}
       <section className="plane plane-deep plane-grid">

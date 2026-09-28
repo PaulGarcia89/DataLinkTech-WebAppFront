@@ -5,6 +5,11 @@ import path from "node:path";
 const dictionary = JSON.parse(fs.readFileSync("src/i18n/en.json", "utf8"));
 const routes = new Set([
   "/",
+  "/guias/",
+  "/guias/productividad-camaras-existentes/",
+  "/guias/wifi-restaurantes/",
+  "/guias/vision-artificial-almacenes/",
+
   "/soluciones/",
   "/medicion-de-productividad/",
   "/industrias/",

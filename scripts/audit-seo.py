@@ -34,7 +34,7 @@ class SEOPage(HTMLParser):
 ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9', 'x': 'http://www.w3.org/1999/xhtml'}
 root = ET.parse('out/sitemap.xml').getroot()
 urls = [node.text for node in root.findall('s:url/s:loc', ns)]
-assert len(urls) == len(set(urls)) == 28, 'Sitemap must contain 28 unique pages'
+assert len(urls) == len(set(urls)) == 36, 'Sitemap must contain 36 unique pages'
 titles, descriptions = set(), set()
 for url in urls:
     route = url.removeprefix('https://www.datalinkcorporation.com')
@@ -57,4 +57,4 @@ for url in urls:
         alternates = node.findall('x:link', ns)
         assert {a.get('hreflang') for a in alternates} >= {'es', 'en'}
         assert all(a.get('href') in urls for a in alternates)
-print('SEO audit passed: 28 indexable pages, unique metadata, sitemap and schema URLs.')
+print('SEO audit passed: 36 indexable pages, unique metadata, sitemap and schema URLs.')
