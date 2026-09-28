@@ -1,3 +1,4 @@
+import { TeamContact } from "@/components/team-contact";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
@@ -126,6 +127,7 @@ export default function About() {
         </div>
       </section>
 
+      <TeamContact />
       <PillarsSection />
       <MethodSection />
 

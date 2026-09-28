@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Copy } from "lucide-react";
+import { trackContact } from "@/i18n/contact-events";
 import { formEndpoint } from "@/i18n/integrations";
 import { contact, services } from "@/lib/content";
 
@@ -41,6 +42,7 @@ export function ContactForm() {
         setStatus(
           "Recibimos tu consulta. Nos pondremos en contacto contigo por correo.",
         );
+        trackContact("contact_form_success");
         form.reset();
       } catch {
         setStatus(

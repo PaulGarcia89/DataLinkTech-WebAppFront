@@ -1,3 +1,4 @@
+import { ContactEvents } from "@/components/contact-events";
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -55,6 +56,7 @@ export default function RootLayout({
         <Header />
         <main id="contenido">{children}</main>
         <Footer />
+        <ContactEvents />
       </body>
     </html>
   );

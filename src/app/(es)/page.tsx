@@ -1,3 +1,4 @@
+import { Demonstrations } from "@/components/home/demonstrations";
 import { Hero } from "@/components/home/hero";
 import {
   EditorialServices,
@@ -13,6 +14,7 @@ export default function Home() {
       <EditorialServices />
       <EditorialOverview />
       <VisionSection />
+      <Demonstrations />
       <MethodSection />
       <CTA />
     </>
