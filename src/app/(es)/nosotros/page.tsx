@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
-import { contact, services } from "@/lib/content";
+import { StructuredData } from "@/components/structured-data";
+import { contact, services, siteUrl } from "@/lib/content";
 import { CoreSchematic } from "@/components/visuals/core-schematic";
 import { Reveal } from "@/components/reveal";
 import {
@@ -35,6 +36,17 @@ const FIGURES = [
 export default function About() {
   return (
     <>
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "@id": `${siteUrl}/nosotros/#webpage`,
+          url: new URL("/nosotros/", siteUrl).href,
+          name: "Acerca de DataLink Tech Corp",
+          mainEntity: { "@id": `${siteUrl}/#organization` },
+          isPartOf: { "@id": `${siteUrl}/#website` },
+        }}
+      />
       <section className="page-hero">
         <div className="container">
           <div className="page-hero-grid">
@@ -48,9 +60,19 @@ export default function About() {
                 <em>La conexión, la diferencia.</em>
               </h1>
               <p className="lead">
-                Nacimos para ocupar un lugar que casi ningún proveedor ocupa: el
-                de quien entiende el negocio completo y responde por toda su
-                tecnología, de la red física a la inteligencia artificial.
+                DataLink Tech Corp ofrece automatización con IA, software a
+                medida, marketing digital, redes, seguridad y soporte IT para
+                empresas en Miami y South Florida. Atendemos en español e
+                inglés.
+              </p>
+              <p style={{ marginTop: 20 }}>
+                <strong>Sitio oficial:</strong>{" "}
+                <a href={siteUrl}>datalinkcorporation.com</a>
+              </p>
+              <p>
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                {" · "}
+                <a href={`tel:${contact.tel}`}>{contact.phone}</a>
               </p>
             </div>
             <CoreSchematic />

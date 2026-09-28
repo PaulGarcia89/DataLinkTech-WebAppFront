@@ -11,7 +11,8 @@ export function Hero() {
             <br className="desktop-break" /> con tu negocio.
           </h1>
           <p>
-            Automatización, software e infraestructura para empresas en Miami.
+            DataLink Tech Corp: automatización, software e infraestructura para
+            empresas en Miami.
           </p>
           <Link className="btn btn-primary" href="/contacto/">
             Hablemos de tu proyecto <ArrowRight size={19} />
