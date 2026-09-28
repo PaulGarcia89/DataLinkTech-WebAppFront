@@ -1116,3 +1116,20 @@ em {
     padding: 22px;
   }
 }
+.demo-metrics {
+  list-style: none;
+  padding: 0 24px 24px;
+  display: grid;
+  gap: 12px;
+}
+.demo-metrics li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--text-strong);
+  font-size: 14px;
+}
+.demo-metrics svg {
+  color: var(--accent-ink);
+  flex-shrink: 0;
+}
