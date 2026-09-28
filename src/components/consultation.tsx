@@ -12,7 +12,7 @@ export function Consultation() {
       <h2 id="consultation-title">Conversemos sobre tu proyecto</h2>
       <p>
         {booking
-          ? "Elige un horario disponible en nuestro calendario. Allí verás la duración y la confirmación de tu reserva."
+          ? "Reserva 30 minutos por teléfono, SMS o WhatsApp. Todos los días de 8:00 a. m. a 10:00 p. m., hora de Miami. Elige tu canal de contacto al reservar."
           : "Cuéntanos qué necesitas y qué horarios te convienen. Confirmaremos contigo la fecha y la modalidad de la consulta."}
       </p>
       <a

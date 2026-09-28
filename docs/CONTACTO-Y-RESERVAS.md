@@ -2,13 +2,14 @@
 
 ## Estado actual
 
-- 12 preguntas frecuentes, dos por servicio, en español e inglés.
-- La página Contacto permite coordinar una consulta por WhatsApp con mensaje
-  prellenado. No promete un horario confirmado ni disponibilidad automática.
-- Sin endpoint verificado, el formulario mantiene «Preparar correo» y explica
-  que el visitante debe enviarlo desde su aplicación de correo.
-- El envío AJAX directo está implementado, pero NO activo hasta configurar
-  un formulario real. El calendario también depende de un enlace real.
+- Formspree creado: `mgavrann`, receptor verificado `datalinkprotech@gmail.com`.
+- Google Calendar: consultas de 30 minutos todos los días, 08:00–22:00,
+  zona America/New_York. Teléfono obligatorio y canal preferido (teléfono,
+  SMS o WhatsApp). Antelación mínima 4 horas, máximo 60 días.
+- URLs públicas configuradas en `src/i18n/integrations.ts`. Las variables de
+  entorno opcionales permiten reemplazarlas; una cadena vacía las desactiva.
+- El formulario informa que Formspree procesa el envío. La recepción en el
+  correo y una reserva completa deben verificarse con una prueba autorizada.
 
 ## Formulario directo
 
