@@ -85,7 +85,7 @@ export const websiteSchema = {
   "@id": `${siteUrl}/#website`,
   url: siteUrl,
   name: "DataLink Tech Corp",
-  alternateName: "DataLink",
+  alternateName: ["DataLink Tech", "datalinkcorporation.com"],
   publisher: { "@id": `${siteUrl}/#organization` },
   inLanguage: ["es-US", "en-US"],
 };

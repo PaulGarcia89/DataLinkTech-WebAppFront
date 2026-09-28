@@ -4,7 +4,7 @@ export const searchContent: Record<
   { title: string; description: string }
 > = {
   "/": {
-    title: "Soluciones de IA, software y soporte IT en Miami",
+    title: "DataLink Tech Corp | IA y soluciones IT en Miami",
     description:
       "Automatización con IA, software a medida, redes y soporte IT para empresas en Miami y South Florida. Atención en español e inglés con DataLink.",
   },

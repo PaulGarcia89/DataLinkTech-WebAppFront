@@ -20,8 +20,19 @@ export const metadata: Metadata = {
     "/",
   ),
   metadataBase: new URL(siteUrl),
+  applicationName: "DataLink Tech Corp",
+  icons: {
+    icon: [
+      { url: "/favicon-96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   title: {
-    default: "Soluciones de IA, software y soporte IT en Miami | DataLink",
+    default: "DataLink Tech Corp | IA y soluciones IT en Miami",
     template: "%s | DataLink Tech Corp",
   },
 };
