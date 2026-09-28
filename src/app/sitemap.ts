@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "nosotros",
     "contacto",
     "soluciones",
+    "medicion-de-productividad",
     "industrias",
     "industrias/restaurantes",
     "industrias/warehouse",

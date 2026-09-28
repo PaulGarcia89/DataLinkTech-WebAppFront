@@ -6,6 +6,7 @@ const dictionary = JSON.parse(fs.readFileSync("src/i18n/en.json", "utf8"));
 const routes = new Set([
   "/",
   "/soluciones/",
+  "/medicion-de-productividad/",
   "/industrias/",
   "/nosotros/",
   "/contacto/",

@@ -1,11 +1,19 @@
 # Medición de contactos
 
-Estado: eventos implementados; Google Analytics NO configurado. No hay historial,
-almacenamiento de eventos ni estadísticas hasta conectar un proveedor.
+Estado: GA4 configurado en una propiedad separada para datalinkcorporation.com.
+Identificador público: `G-S9WVMKHH03`, flujo `15862069721`.
+Zona horaria New York; moneda USD. Medición mejorada desactivada para evitar
+captura automática de formularios, URLs y eventos duplicados.
 
-El sitio emite `datalink:contact` en `window` y reenvía a `window.gtag`, únicamente
-si una integración ya lo ha configurado. No carga scripts, cookies ni trackers.
-No añadir un segundo detector de clics con los mismos eventos en Tag Manager.
+El visitante debe aceptar las estadísticas. Antes de aceptar o al rechazarlas,
+no se carga el script de Google. Las preferencias se guardan en localStorage;
+se pueden modificar desde el pie. Al retirar consentimiento se desactiva la
+recopilación y se borran cookies _ga accesibles desde este dominio.
+No se activan Google Signals ni personalización publicitaria.
+
+Se envía una vista por cambio de ruta, sin query ni fragmento. Los eventos de
+contacto se reenvían solo con consentimiento guardado. El evento DOM local
+`datalink:contact` permanece disponible; no almacena ni transmite datos por sí solo.
 
 | Evento | Significado |
 | --- | --- |
@@ -19,11 +27,10 @@ No añadir un segundo detector de clics con los mismos eventos en Tag Manager.
 Solo se transmiten nombre fijo del evento, ruta sin query/hash e idioma.
 Nunca se incluyen nombre, email, teléfono, mensaje o valores del formulario.
 
-Para activar GA4: crear la propiedad del negocio y su flujo web; configurar el
-identificador público G-… y las preferencias de privacidad correspondientes;
-verificar eventos en DebugView y marcar contact_form_success como evento clave.
-La confirmación de reservas necesita una integración separada del calendario;
-no debe inferirse de los clics. Revisar resultados por página e idioma.
+Validación: comprobar visitas en Tiempo real y contact_form_success como evento
+clave. Abrir el calendario NO representa una reserva confirmada. No enviar
+consultas de prueba adicionales sin autorización. Los bloqueadores de anuncios
+y el rechazo del consentimiento reducen la cantidad de visitas medidas.
 
 Las demostraciones son escenarios ilustrativos, no casos de éxito ni resultados
 medidos. Sustituirlas por proyectos reales solo con datos y permiso del cliente.

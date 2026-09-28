@@ -290,7 +290,7 @@ export function Demonstrations() {
               <strong>Qué entregaríamos</strong>
               <p>{demo.deliverable}</p>
             </div>
-            <Link href={demo.href}>
+            <Link href="/medicion-de-productividad/">
               Explorar esta solución{" "}
               <ArrowUpRight size={18} aria-hidden="true" />
             </Link>

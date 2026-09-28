@@ -1,3 +1,4 @@
+import { AnalyticsConsent } from "@/components/analytics-consent";
 import { ContactEvents } from "@/components/contact-events";
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main id="contenido">{children}</main>
         <Footer />
         <ContactEvents />
+        <AnalyticsConsent />
       </body>
     </html>
   );

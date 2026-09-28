@@ -1,3 +1,4 @@
+import { consentKey } from "./analytics";
 /** Only fixed event names and coarse page paths; never form contents or contact details. */
 export type ContactEvent =
   | "contact_phone_click"
@@ -23,8 +24,10 @@ export function trackContact(name: ContactEvent) {
     ) => void;
   };
   try {
+    if (localStorage.getItem(consentKey) !== "granted") return;
     analytics.gtag?.("event", name, {
       page_path: detail.page_path,
+      page_location: window.location.origin + detail.page_path,
       language: detail.language,
     });
   } catch {
