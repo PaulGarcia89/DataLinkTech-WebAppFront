@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { method, services, siteUrl } from "@/lib/content";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { Glyph } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import { SectionHead } from "@/components/home/sections";
@@ -55,12 +55,18 @@ export default async function ServicePage({
   return (
     <>
       <StructuredData
+        data={breadcrumbSchema([
+          { name: "Soluciones", path: "/soluciones/" },
+          { name: service.name, path: `/${slug}/` },
+        ])}
+      />
+      <StructuredData
         data={{
           "@context": "https://schema.org",
           "@type": "Service",
           name: service.name,
           description: service.description,
-          url: `${siteUrl}/${slug}/`,
+          url: new URL(`/${slug}/`, siteUrl).href,
           areaServed: ["Miami", "South Florida"],
           provider: { "@id": `${siteUrl}/#organization` },
         }}

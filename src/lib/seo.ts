@@ -1,3 +1,4 @@
+import { searchContent } from "./search-content";
 import { languagePaths } from "@/i18n/paths";
 import type { Metadata } from "next";
 import { contact, siteUrl } from "./content";
@@ -10,9 +11,26 @@ export function pageMetadata(
   description: string,
   path: string,
 ): Metadata {
+  const search = searchContent[path];
+  title = search?.title ?? title;
+  description = search?.description ?? description;
   return {
     title,
     description,
+    robots:
+      process.env.VERCEL_ENV === "preview"
+        ? { index: false, follow: false }
+        : {
+            index: true,
+            follow: true,
+            googleBot: {
+              index: true,
+              follow: true,
+              "max-image-preview": "large",
+              "max-snippet": -1,
+              "max-video-preview": -1,
+            },
+          },
     alternates: { canonical: path, languages: languagePaths(path) },
     openGraph: {
       title,
@@ -60,3 +78,27 @@ export const organizationSchema = {
     availableLanguage: ["Spanish", "English"],
   },
 };
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: "DataLink Tech Corp",
+  alternateName: "DataLink",
+  publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: ["es-US", "en-US"],
+};
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}

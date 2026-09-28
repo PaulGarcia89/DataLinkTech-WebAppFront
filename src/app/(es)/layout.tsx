@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { siteUrl } from "@/lib/content";
-import { organizationSchema, pageMetadata, siteDescription } from "@/lib/seo";
+import {
+  organizationSchema,
+  websiteSchema,
+  pageMetadata,
+  siteDescription,
+} from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
 
 import "@/app/globals.css";
@@ -16,7 +21,7 @@ export const metadata: Metadata = {
   ),
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DataLink Tech Corp | Tecnología e IA para negocios que avanzan",
+    default: "Soluciones de IA, software y soporte IT en Miami | DataLink",
     template: "%s | DataLink Tech Corp",
   },
 };
@@ -32,6 +37,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <StructuredData data={organizationSchema} />
+        <StructuredData data={websiteSchema} />
         <a className="skip-link" href="#contenido">
           Saltar al contenido
         </a>
