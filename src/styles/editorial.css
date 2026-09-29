@@ -1338,6 +1338,13 @@ em {
   }
 }
 
+/* Reserve space for the platform link without wrapping the booking action. */
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .header-inner { gap: 16px; }
+  .nav-desktop { gap: 20px; }
+}
+.header-cta { white-space: nowrap; }
+
 /* Keep the new service easy to find without crowding intermediate screens. */
 .nav-link {
   white-space: nowrap;

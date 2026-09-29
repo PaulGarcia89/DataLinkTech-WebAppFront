@@ -1,0 +1,108 @@
+/* Commercial descriptions only. No SaaS connection or customer data. */
+export const platformModules = [
+  {
+    id: "recruitment",
+    icon: "BriefcaseBusiness",
+    name: "Reclutamiento",
+    summary: "De la vacante a la contratación, con cada etapa a la vista.",
+    features: [
+      "Vacantes y candidatos",
+      "Pipeline de selección",
+      "Entrevistas y contratación",
+    ],
+    stages: ["Vacante", "Candidatura", "Entrevista", "Contratación"],
+    note: "Organiza el proceso de selección y da seguimiento a cada candidatura.",
+  },
+  {
+    id: "people",
+    icon: "Users",
+    name: "Gestión de personal",
+    summary: "Un expediente organizado para acompañar a cada persona.",
+    features: [
+      "Información de empleo",
+      "Documentos y cumplimiento",
+      "Historial y auditoría",
+    ],
+    stages: ["Perfil", "Empleo", "Documentos", "Historial"],
+    note: "Consulta información laboral y documentación desde el expediente del empleado.",
+  },
+  {
+    id: "onboarding",
+    icon: "FileCheck2",
+    name: "Incorporación y firmas",
+    summary: "Documentos, tareas y seguimiento para empezar con orden.",
+    features: [
+      "Documentación de ingreso",
+      "Solicitudes de firma",
+      "Seguimiento de pendientes",
+    ],
+    stages: ["Preparar", "Enviar", "Firmar", "Revisar"],
+    note: "Las firmas electrónicas requieren configurar y validar el proveedor para tu organización.",
+  },
+  {
+    id: "learning",
+    icon: "GraduationCap",
+    name: "Capacitación",
+    summary: "Formación organizada, desde el contenido hasta la evaluación.",
+    features: [
+      "Cursos y rutas de aprendizaje",
+      "Asignaciones y evaluaciones",
+      "Resultados y certificados",
+    ],
+    stages: ["Curso", "Asignación", "Evaluación", "Certificado"],
+    note: "Da seguimiento a las actividades de formación y sus resultados.",
+  },
+  {
+    id: "productivity",
+    icon: "ScanLine",
+    name: "Productividad con IA",
+    summary: "Convierte eventos de la operación en información para mejorar.",
+    features: [
+      "Cámaras y estaciones",
+      "Eventos y métricas operativas",
+      "Reportes por proceso",
+    ],
+    stages: ["Cámara", "Evento", "Métrica", "Revisión"],
+    note: "Las cámaras, detecciones y métricas se configuran y validan en cada instalación; el análisis requiere revisión humana.",
+  },
+  {
+    id: "restaurant",
+    icon: "UtensilsCrossed",
+    name: "Inventario de restaurantes",
+    summary:
+      "Conecta ingredientes, recetas y consumo para entender tu inventario.",
+    features: [
+      "Ingredientes y recetas",
+      "Consumos y desperdicios",
+      "Importación de ventas",
+    ],
+    stages: ["Importar ventas", "Validar", "Procesar", "Consumo"],
+    note: "El flujo contempla importación de archivos de ventas. Una conexión POS en tiempo real requiere un alcance específico.",
+  },
+  {
+    id: "assets",
+    icon: "Package",
+    name: "Activos y equipos",
+    summary: "Sigue el recorrido de tus equipos y sus responsabilidades.",
+    features: [
+      "Registro de activos",
+      "Entregas y devoluciones",
+      "Mantenimiento y auditoría",
+    ],
+    stages: ["Registrar", "Entregar", "Mantener", "Devolver"],
+    note: "Gestiona equipos y activos por separado del inventario de ingredientes.",
+  },
+  {
+    id: "companies",
+    icon: "Building2",
+    name: "Empresas y sucursales",
+    summary: "Organiza la operación según la estructura de tu empresa.",
+    features: [
+      "Contextos por empresa",
+      "Sucursales y roles",
+      "Acceso según módulos habilitados",
+    ],
+    stages: ["Empresa", "Sucursal", "Rol", "Módulo"],
+    note: "La disponibilidad depende de los módulos habilitados y permisos de cada organización.",
+  },
+] as const;

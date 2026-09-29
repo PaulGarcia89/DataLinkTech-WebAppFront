@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
     "guias",
+    "plataforma",
     "diseno-web",
     "guias/productividad-camaras-existentes",
     "guias/wifi-restaurantes",

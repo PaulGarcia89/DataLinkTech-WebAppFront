@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 const dictionary = JSON.parse(fs.readFileSync("src/i18n/en.json", "utf8"));
 const routes = new Set([
+  "/plataforma/",
   "/",
   "/guias/",
   "/diseno-web/",

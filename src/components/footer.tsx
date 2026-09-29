@@ -65,6 +65,7 @@ export function Footer() {
           <div>
             <h3>Soluciones</h3>
             <div className="footer-col">
+              <Link href="/plataforma/">Plataforma</Link>
               <Link href="/diseno-web/">Diseño web</Link>
               <Link href="/medicion-de-productividad/">
                 Productividad con IA
