@@ -1,3 +1,4 @@
+import { CommercialPreview } from "@/components/commercial-preview";
 import { IndustrySolutionsHome } from "@/components/industry-solutions";
 import { Demonstrations } from "@/components/home/demonstrations";
 import { Hero } from "@/components/home/hero";
@@ -17,6 +18,7 @@ export default function Home() {
       <IndustrySolutionsHome />
       <VisionSection />
       <Demonstrations />
+      <CommercialPreview />
       <MethodSection />
       <CTA />
     </>

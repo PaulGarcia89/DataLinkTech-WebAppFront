@@ -20,6 +20,7 @@ const routes = new Set([
   "/industrias/restaurantes/",
   "/industrias/warehouse/",
   "/ia-y-automatizacion/",
+  "/ia-y-automatizacion/#commercial-demo",
   "/marketing-digital/",
   "/software-a-medida/",
   "/redes-e-infraestructura/",

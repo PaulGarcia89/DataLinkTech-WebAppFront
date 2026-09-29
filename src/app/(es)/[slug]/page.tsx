@@ -1,3 +1,4 @@
+import { CommercialDemo } from "@/components/commercial-demo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -146,6 +147,7 @@ export default async function ServicePage({
       </section>
 
       <ServiceScope slug={slug} />
+      {slug === "ia-y-automatizacion" && <CommercialDemo />}
 
       {/* --- Qué cambia --- */}
       <section className="plane plane-deep plane-grid">
