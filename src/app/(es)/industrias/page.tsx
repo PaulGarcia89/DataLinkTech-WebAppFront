@@ -1,8 +1,5 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { IndustrySolutions } from "@/components/industry-solutions";
 import { pageMetadata } from "@/lib/seo";
-import { sectors } from "@/lib/content";
-import { Glyph } from "@/components/icons";
 import { SectionHead } from "@/components/home/sections";
 import { VenueMap } from "@/components/visuals/venue-map";
 import { CTA } from "@/components/footer";
@@ -29,18 +26,11 @@ export default function Industries() {
             siempre el mismo: entender cómo funciona tu operación un día normal.
           </p>
 
-          <div className="industry-hero-list">
-            {sectors.map((s) => (
-              <Link href={s.href} key={s.slug}>
-                <Glyph name={s.icon} size={26} />
-                <div>
-                  <h2>{s.name}</h2>
-                  <p>{s.copy}</p>
-                </div>
-                <ArrowUpRight size={20} />
-              </Link>
-            ))}
-          </div>
+          <IndustrySolutions expanded />
+          <p className="sector-scope-note">
+            El alcance se define tras evaluar tu operación y la compatibilidad
+            de tus equipos y sistemas.
+          </p>
         </div>
       </section>
 

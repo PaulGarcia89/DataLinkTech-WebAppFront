@@ -13,6 +13,8 @@ const routes = new Set([
   "/soluciones/",
   "/medicion-de-productividad/",
   "/industrias/",
+  "/industrias/#comercios",
+  "/industrias/#oficinas",
   "/nosotros/",
   "/contacto/",
   "/industrias/restaurantes/",

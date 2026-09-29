@@ -1533,4 +1533,140 @@ em {
     grid-template-columns: 1fr;
   }
 }
-.guide-article > .eyebrow { display: block; margin-top: 32px; }
+.guide-article > .eyebrow {
+  display: block;
+  margin-top: 32px;
+}
+
+/* Business needs are visible and remain still while visitors compare sectors. */
+.sector-section-title {
+  max-width: 850px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.12;
+  margin: 20px 0;
+}
+.sector-section-lead {
+  max-width: 700px;
+  color: #516273;
+  line-height: 1.75;
+}
+.sector-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 44px;
+}
+.sector-card {
+  scroll-margin-top: 125px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid #bdcbd6;
+  background: #fff;
+}
+.sector-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.sector-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background: #edf4ff;
+  color: #0054cc;
+  border: 1px solid #d4e4fb;
+}
+.sector-card-top .mono {
+  color: #516273;
+}
+.sector-card > h2,
+.sector-card > h3 {
+  margin: 0 0 14px;
+  font-size: clamp(24px, 2.5vw, 32px);
+  color: #102942;
+  line-height: 1.25;
+}
+.sector-intro {
+  color: #516273;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.sector-links {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 24px;
+  display: grid;
+  gap: 10px;
+}
+.sector-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 14px 16px;
+  background: #f4f7fa;
+  border: 1px solid #dae3ed;
+  color: #102942;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.sector-links svg,
+.sector-cta svg {
+  flex-shrink: 0;
+  color: #0054cc;
+}
+.sector-links a:hover {
+  background: #eaf2ff;
+  border-color: #0054cc;
+}
+.sector-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #d4dbe0;
+  padding-top: 22px;
+  color: #0054cc;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.sector-cta:hover {
+  text-decoration: underline;
+}
+.sector-detail {
+  border-top: 1px solid #d4dbe0;
+  padding-top: 24px;
+  margin-bottom: 28px;
+}
+.sector-detail h3 {
+  font-size: 17px;
+  margin: 0 0 10px;
+  color: #102942;
+}
+.sector-detail p {
+  color: #516273;
+  line-height: 1.75;
+  margin: 0 0 24px;
+}
+.sector-detail p:last-child {
+  margin-bottom: 0;
+}
+.sector-scope-note {
+  margin-top: 28px;
+  color: #516273;
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .sector-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sector-card {
+    scroll-margin-top: 100px;
+  }
+}
