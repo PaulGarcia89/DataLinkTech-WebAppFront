@@ -2082,3 +2082,39 @@ em {
     transform: scaleY(0.7);
   }
 }
+
+/* Decorative workstation fades toward the reading area. */
+.cta, .commercial-preview {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.ambient-workstation {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  inset: 0 0 0 auto;
+  width: min(76%, 1050px);
+  background: url("/illustrations/ambient-workstation.svg") right center / contain no-repeat;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 68%);
+  opacity: .8;
+}
+.cta {
+  background: #f1f5fa;
+  color: #112c44;
+}
+.cta h2, .cta h2 em { color: #112c44; }
+.cta p { color: #516273; }
+.cta .eyebrow { color: #0054cc; }
+.cta .btn-line { color: #112c44; border-color: #8095aa; background: #f1f5fae8; }
+.cta > .container, .commercial-preview > .container { position: relative; z-index: 1; }
+.commercial-preview .ambient-workstation { opacity: .5; right: -14%; }
+@media (max-width: 800px) {
+  .ambient-workstation {
+    width: 100%;
+    opacity: .22;
+    background-position: right bottom;
+    mask-image: linear-gradient(90deg, transparent 10%, #000 100%);
+  }
+  .commercial-preview .ambient-workstation { opacity: .16; }
+}

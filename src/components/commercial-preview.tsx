@@ -16,6 +16,7 @@ export function CommercialPreview() {
   ];
   return (
     <section className="commercial-preview plane">
+      <div className="ambient-workstation" aria-hidden="true" />
       <div className="container">
         <p className="eyebrow">DE LA CONSULTA AL SEGUIMIENTO</p>
         <div className="commercial-preview-grid">

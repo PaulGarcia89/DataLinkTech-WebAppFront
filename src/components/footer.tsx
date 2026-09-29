@@ -20,6 +20,7 @@ export function CTA({
 }) {
   return (
     <section className="cta">
+      <div className="ambient-workstation" aria-hidden="true" />
       <div className="container">
         <div className="cta-converge" aria-hidden="true">
           <svg viewBox="0 0 560 90" role="presentation">
