@@ -11,7 +11,7 @@ import { CTA } from "@/components/footer";
 
 export const metadata = pageMetadata(
   "Soluciones tecnológicas conectadas en Miami",
-  "IA y automatización, marketing digital, software a medida, redes, seguridad y soporte IT para empresas de Miami y South Florida.",
+  "IA y automatización, marketing digital, software a medida, redes, seguridad y soporte IT para empresas de Florida.",
   "/soluciones/",
 );
 
@@ -40,20 +40,46 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="container productivity-feature" aria-labelledby="productivity-feature-title">
+      <section
+        className="container productivity-feature"
+        aria-labelledby="productivity-feature-title"
+      >
         <div>
           <p className="eyebrow">CÁMARAS + INTELIGENCIA ARTIFICIAL</p>
           <h2 id="productivity-feature-title">Productividad con IA</h2>
-          <p>Conoce los conteos, tiempos y flujos que puedes analizar en cafeterías, restaurantes, almacenes y líneas de producción.</p>
+          <p>
+            Conoce los conteos, tiempos y flujos que puedes analizar en
+            cafeterías, restaurantes, almacenes y líneas de producción.
+          </p>
           <Link className="btn btn-primary" href="/medicion-de-productividad/">
             Ver cómo funciona <ArrowUpRight size={18} />
           </Link>
         </div>
-        <div className="productivity-feature-metrics" aria-label="Indicadores del proceso">
-          <p><strong>01</strong> Conteo de unidades</p>
-          <p><strong>02</strong> Tiempos de ciclo</p>
-          <p><strong>03</strong> Flujo por zonas</p>
+        <div
+          className="productivity-feature-metrics"
+          aria-label="Indicadores del proceso"
+        >
+          <p>
+            <strong>01</strong> Conteo de unidades
+          </p>
+          <p>
+            <strong>02</strong> Tiempos de ciclo
+          </p>
+          <p>
+            <strong>03</strong> Flujo por zonas
+          </p>
         </div>
+      </section>
+      <section className="container web-service-link">
+        <h2>Diseño web</h2>
+        <p>
+          Sitios web en español e inglés, adaptados al móvil y preparados para
+          recibir consultas. Diseño, contenido, SEO técnico y conexiones con tus
+          herramientas.
+        </p>
+        <Link className="btn btn-primary" href="/diseno-web/">
+          Diseño web <ArrowUpRight size={18} />
+        </Link>
       </section>
       <ServicesGrid />
       <ChainSection />

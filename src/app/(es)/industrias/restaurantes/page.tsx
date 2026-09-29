@@ -11,7 +11,7 @@ import { CTA } from "@/components/footer";
 
 export const metadata = pageMetadata(
   "Tecnología para restaurantes en Miami",
-  "POS, redes y Wi-Fi, cámaras, reservas y asistentes de IA para restaurantes de Miami y South Florida, con un solo aliado tecnológico.",
+  "POS, redes y Wi-Fi, cámaras, reservas y asistentes de IA para restaurantes de Florida, con un solo aliado tecnológico.",
   "/industrias/restaurantes/",
 );
 
@@ -50,9 +50,9 @@ export default function Restaurants() {
           "@type": "Service",
           name: "Tecnología para restaurantes",
           description:
-            "POS, redes y Wi-Fi, videovigilancia, reservas y asistentes de IA para restaurantes en Miami y South Florida.",
+            "POS, redes y Wi-Fi, videovigilancia, reservas y asistentes de IA para restaurantes en Florida.",
           url: `${siteUrl}/industrias/restaurantes/`,
-          areaServed: ["Miami", "South Florida"],
+          areaServed: ["Florida"],
           provider: { "@id": `${siteUrl}/#organization` },
         }}
       />

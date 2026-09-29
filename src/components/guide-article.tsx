@@ -33,6 +33,10 @@ export function GuideArticle({ slug }: { slug: string }) {
           <p className="mono">
             Preparadas por DataLink Tech Corp · Septiembre de 2026
           </p>
+          <aside className="guide-answer">
+            <h2>Respuesta breve</h2>
+            <p>{guide.answer}</p>
+          </aside>
           {guide.sections.map((section, i) => (
             <section key={section.title}>
               <span className="mono">0{i + 1}</span>
@@ -40,6 +44,15 @@ export function GuideArticle({ slug }: { slug: string }) {
               <p>{section.body}</p>
             </section>
           ))}
+          <section>
+            <h2>Antes de solicitar una evaluación</h2>
+            {guide.questions.map((item) => (
+              <div key={item.question}>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </div>
+            ))}
+          </section>
           <p className="guide-source">
             Referencia técnica:{" "}
             <a href={guide.source} target="_blank" rel="noopener noreferrer">

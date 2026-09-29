@@ -5,7 +5,7 @@ export const contact = {
   phone: "+1 (786) 402-2741",
   tel: "+17864022741",
   whatsapp: "https://wa.me/17864022741",
-  region: "Miami · South Florida",
+  region: "Miami · Florida",
 };
 
 export const brand = {
@@ -181,7 +181,7 @@ export const services = [
     tag: "ACOMPAÑAMIENTO TECNOLÓGICO",
     promise: "Tu equipo avanza. Nosotros te acompañamos.",
     description:
-      "Resolvemos incidencias, mantenemos los equipos y planificamos mejoras para que la tecnología deje de interrumpir el trabajo diario. Soporte remoto y presencial en Miami y South Florida.",
+      "Resolvemos incidencias, mantenemos los equipos y planificamos mejoras para que la tecnología deje de interrumpir el trabajo diario. Soporte remoto y presencial en Florida.",
     icon: "support",
     capabilities: [
       {
@@ -318,7 +318,7 @@ export const pillars = [
   },
   {
     title: "Presencia en Miami",
-    copy: "Trabajo remoto y presencial en Miami y South Florida, con atención en español e inglés.",
+    copy: "Trabajo remoto y presencial en Florida, con atención en español e inglés.",
   },
   {
     title: "Tecnología que se entiende",

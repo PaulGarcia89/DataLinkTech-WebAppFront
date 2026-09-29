@@ -1,6 +1,20 @@
 export const guides = [
   {
     slug: "productividad-camaras-existentes",
+    answer:
+      "Depende de la escena y del acceso al video. Se pueden reutilizar cámaras cuando el evento es visible, la imagen tiene suficiente detalle y existe una integración autorizada. Primero revisamos una muestra; no hace falta sustituir equipos sin evaluarlos.",
+    questions: [
+      {
+        question: "¿Qué información debo preparar?",
+        answer:
+          "Marca y modelo de cámaras y grabador, plano del área y el evento que quieres contar. Acordamos el canal autorizado antes de compartir video.",
+      },
+      {
+        question: "¿Cómo sé si el conteo es fiable?",
+        answer:
+          "Compara eventos detectados con una revisión manual del mismo intervalo. Registra errores y omisiones; el umbral aceptable depende de la decisión que tomarás.",
+      },
+    ],
     href: "/guias/productividad-camaras-existentes/",
     title: "¿Puedo medir productividad con mis cámaras actuales?",
     description:
@@ -34,6 +48,20 @@ export const guides = [
   },
   {
     slug: "wifi-restaurantes",
+    answer:
+      "Primero distingue un fallo de internet de uno de cobertura Wi-Fi: prueba por cable y por Wi-Fi en el mismo horario. Después revisa capacidad, interferencias y aislamiento entre invitados y operación. Comprar otro router no siempre resuelve el problema.",
+    questions: [
+      {
+        question: "¿Necesito cambiar todos los equipos?",
+        answer:
+          "No se decide sin revisar el inventario. Un problema puede estar en el cableado, la ubicación, la configuración o el proveedor de internet.",
+      },
+      {
+        question: "¿Qué comprobamos al terminar?",
+        answer:
+          "Cobertura en las zonas acordadas, conexión de POS e impresoras y separación de invitados. La prueba se realiza con los equipos que usa el negocio.",
+      },
+    ],
     href: "/guias/wifi-restaurantes/",
     title: "¿Cómo mejorar el Wi-Fi de un restaurante?",
     description:
@@ -67,6 +95,20 @@ export const guides = [
   },
   {
     slug: "vision-artificial-almacenes",
+    answer:
+      "Un almacén necesita un evento visible, una definición de la métrica, acceso autorizado al video y una referencia manual para validar. Empieza por una zona y una decisión operativa antes de ampliar el análisis.",
+    questions: [
+      {
+        question: "¿Qué puede medir un piloto?",
+        answer:
+          "Unidades que cruzan una zona, tiempos entre eventos visibles o acumulación de materiales. La visibilidad y las reglas del proceso determinan qué es viable.",
+      },
+      {
+        question: "¿Qué debe incluir una propuesta?",
+        answer:
+          "Zona, métrica, criterios de aceptación, panel o exportación, permisos, almacenamiento, mantenimiento y costes recurrentes. El alcance se acuerda después de evaluar la operación.",
+      },
+    ],
     href: "/guias/vision-artificial-almacenes/",
     title: "¿Qué necesita un almacén para implementar visión artificial?",
     description:

@@ -2118,3 +2118,13 @@ em {
   }
   .commercial-preview .ambient-workstation { opacity: .16; }
 }
+
+.coverage-note { font-size: 13px !important; line-height: 1.6; max-width: 65ch; margin-top: 20px; color: #516273; }
+.guide-answer { padding: 26px; border-left: 3px solid #0066ff; background: #eef4fc; margin-block: 28px; }
+.guide-answer h2 { margin-top: 0; }
+.web-deliverables { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 30px; }
+.web-deliverables article { padding: 32px; border: 1px solid #cedae6; background: white; }
+.web-deliverables svg { color: #0054cc; }
+.web-deliverables h3 { margin: 18px 0; }
+.web-service-link { padding-block: 50px; }
+@media(max-width: 700px) { .web-deliverables { grid-template-columns: 1fr; } }

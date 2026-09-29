@@ -132,6 +132,7 @@ export function ContactForm() {
           {services.map((s) => (
             <option key={s.slug}>{s.name}</option>
           ))}
+          <option>Diseño web</option>
           <option>Quiero orientación para mi proyecto</option>
         </select>
       </label>

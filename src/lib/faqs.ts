@@ -66,7 +66,7 @@ export const serviceFaqs: Record<
     {
       question: "¿El soporte puede ser remoto o presencial?",
       answer:
-        "Atendemos de forma remota y presencial en Miami y South Florida. El tipo de atención depende del problema, la ubicación y la disponibilidad acordada.",
+        "Atendemos de forma remota y presencial en Florida. El tipo de atención depende del problema, la ubicación y la disponibilidad acordada.",
     },
     {
       question: "¿Qué información debo enviar para pedir soporte?",

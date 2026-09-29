@@ -20,7 +20,7 @@ export default function Warehouse() {
           name: "Visión artificial para operaciones de warehouse",
           url: `${siteUrl}/industrias/warehouse/`,
           provider: { "@id": `${siteUrl}/#organization` },
-          areaServed: ["Miami", "South Florida"],
+          areaServed: ["Florida"],
         }}
       />
       <section className="page-hero">

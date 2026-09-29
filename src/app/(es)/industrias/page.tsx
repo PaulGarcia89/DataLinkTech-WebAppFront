@@ -6,7 +6,7 @@ import { CTA } from "@/components/footer";
 
 export const metadata = pageMetadata(
   "Tecnología para restaurantes y empresas en Miami",
-  "Automatización, software, POS, redes y seguridad para restaurantes, comercios y oficinas de Miami y South Florida.",
+  "Automatización, software, POS, redes y seguridad para restaurantes, comercios y oficinas de Florida.",
   "/industrias/",
 );
 

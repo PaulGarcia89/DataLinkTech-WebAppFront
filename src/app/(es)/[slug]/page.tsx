@@ -31,7 +31,7 @@ export async function generateMetadata({
   if (!service) return {};
   return pageMetadata(
     `${service.name} en Miami`,
-    `${service.description} Para negocios en Miami y South Florida.`,
+    `${service.description} Para negocios en Florida.`,
     `/${slug}/`,
   );
 }
@@ -71,7 +71,7 @@ export default async function ServicePage({
           name: service.name,
           description: service.description,
           url: new URL(`/${slug}/`, siteUrl).href,
-          areaServed: ["Miami", "South Florida"],
+          areaServed: ["Florida"],
           provider: { "@id": `${siteUrl}/#organization` },
         }}
       />

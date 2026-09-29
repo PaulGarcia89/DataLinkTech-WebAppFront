@@ -15,7 +15,7 @@ import { CTA } from "@/components/footer";
 
 export const metadata = pageMetadata(
   "Nosotros — conectamos tecnología y negocio",
-  "DataLink Tech Corp conecta IA, software, infraestructura, seguridad y soporte para negocios de Miami y South Florida, con un solo aliado tecnológico.",
+  "DataLink Tech Corp conecta IA, software, infraestructura, seguridad y soporte para negocios de Florida, con un solo aliado tecnológico.",
   "/nosotros/",
 );
 
@@ -26,7 +26,7 @@ const FIGURES = [
   },
   {
     value: "Miami, FL",
-    label: "Trabajo remoto y presencial en todo South Florida.",
+    label: "Trabajo remoto y presencial en Florida.",
   },
   {
     value: "ES · EN",
@@ -63,7 +63,7 @@ export default function About() {
               <p className="lead">
                 DataLink Tech Corp ofrece automatización con IA, software a
                 medida, marketing digital, redes, seguridad y soporte IT para
-                empresas en Miami y South Florida. Atendemos en español e
+                empresas en Florida. Atendemos en español e
                 inglés.
               </p>
               <p style={{ marginTop: 20 }}>

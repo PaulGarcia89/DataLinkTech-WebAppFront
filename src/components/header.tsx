@@ -1,4 +1,5 @@
 "use client";
+import { BookingLink } from "./booking-link";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -32,17 +33,18 @@ export function Header() {
               key={item.href}
               className="nav-link"
               href={item.href}
-              aria-current={pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "") ? "page" : undefined}
+              aria-current={
+                pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "")
+                  ? "page"
+                  : undefined
+              }
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <Link className="btn btn-signal btn-sm header-cta" href="/contacto/">
-          Hablemos
-          <ArrowUpRight size={16} />
-        </Link>
+        <BookingLink className="btn btn-signal btn-sm header-cta" />
 
         <LanguageSwitch locale="es" />
 
@@ -70,7 +72,11 @@ export function Header() {
           <Link
             key={item.href}
             href={item.href}
-            aria-current={pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "") ? "page" : undefined}
+            aria-current={
+              pathname.replace(/\/$/, "") === item.href.replace(/\/$/, "")
+                ? "page"
+                : undefined
+            }
             onClick={() => setOpen(false)}
           >
             {item.label}
@@ -87,13 +93,9 @@ export function Header() {
             <ArrowUpRight size={18} />
           </Link>
         ))}
-        <Link
-          className="btn btn-signal"
-          href="/contacto/"
-          onClick={() => setOpen(false)}
-        >
-          Solicita tu evaluación
-          <ArrowUpRight size={17} />
+        <BookingLink className="btn btn-signal" />
+        <Link href="/diseno-web/" onClick={() => setOpen(false)}>
+          Diseño web
         </Link>
       </nav>
     </header>

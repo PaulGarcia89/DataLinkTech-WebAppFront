@@ -6,12 +6,12 @@ export const searchContent: Record<
   "/": {
     title: "DataLink Tech Corp | IA y soluciones IT en Miami",
     description:
-      "Automatización con IA, software a medida, redes y soporte IT para empresas en Miami y South Florida. Atención en español e inglés con DataLink.",
+      "Automatización con IA, software a medida, redes y soporte IT para empresas en Florida. Atención en español e inglés con DataLink.",
   },
   "/ia-y-automatizacion/": {
     title: "Automatización con IA para empresas en Miami",
     description:
-      "Conecta tus sistemas y automatiza consultas, reservas y seguimiento con asistentes de IA. Soluciones para empresas de Miami y South Florida.",
+      "Conecta tus sistemas y automatiza consultas, reservas y seguimiento con asistentes de IA. Soluciones para empresas de Florida.",
   },
   "/marketing-digital/": {
     title: "Marketing digital para negocios en Miami",
@@ -26,7 +26,7 @@ export const searchContent: Record<
   "/redes-e-infraestructura/": {
     title: "Redes, Wi-Fi empresarial y cableado en Miami",
     description:
-      "Diseño e instalación de redes, cableado estructurado, Wi-Fi empresarial y servidores para negocios en Miami y South Florida.",
+      "Diseño e instalación de redes, cableado estructurado, Wi-Fi empresarial y servidores para negocios en Florida.",
   },
   "/seguridad-y-control/": {
     title: "Cámaras y control de acceso para empresas en Miami",
@@ -36,7 +36,7 @@ export const searchContent: Record<
   "/soporte-it/": {
     title: "Soporte técnico IT para empresas en Miami",
     description:
-      "Soporte IT remoto y presencial, mantenimiento de equipos y solución de problemas de red, correo y POS en Miami y South Florida.",
+      "Soporte IT remoto y presencial, mantenimiento de equipos y solución de problemas de red, correo y POS en Florida.",
   },
   "/soluciones/": {
     title: "Servicios tecnológicos para empresas en Miami",
@@ -56,7 +56,7 @@ export const searchContent: Record<
   "/industrias/warehouse/": {
     title: "Cámaras con IA para productividad en almacenes",
     description:
-      "Analiza flujo de materiales, tiempos de ciclo y conteo de unidades con visión artificial. Soluciones para almacenes en Miami y South Florida.",
+      "Analiza flujo de materiales, tiempos de ciclo y conteo de unidades con visión artificial. Soluciones para almacenes en Florida.",
   },
   "/nosotros/": {
     title: "DataLink Tech Corp: tecnología para empresas en Miami",
@@ -66,6 +66,6 @@ export const searchContent: Record<
   "/contacto/": {
     title: "Contacta a DataLink Tech Corp en Miami",
     description:
-      "Cuéntanos tu proyecto de tecnología, automatización o soporte IT. Contacta a DataLink por teléfono, WhatsApp o correo en Miami y South Florida.",
+      "Cuéntanos tu proyecto de tecnología, automatización o soporte IT. Contacta a DataLink por teléfono, WhatsApp o correo en Florida.",
   },
 };

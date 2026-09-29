@@ -15,7 +15,7 @@ import { businessProfile } from "@/i18n/business-profile";
 
 export const metadata = pageMetadata(
   "Contacto",
-  "Cuéntanos tu proyecto y exploremos juntos la solución tecnológica para tu negocio en Miami y South Florida.",
+  "Cuéntanos tu proyecto y exploremos juntos la solución tecnológica para tu negocio en Florida.",
   "/contacto/",
 );
 

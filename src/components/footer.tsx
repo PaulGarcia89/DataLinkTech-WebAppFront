@@ -1,3 +1,4 @@
+import { BookingLink } from "./booking-link";
 import Link from "next/link";
 import { ArrowUpRight, MapPin, Mail, MessageCircle, Phone } from "lucide-react";
 import { BrandLogo } from "./brand-logo";
@@ -34,10 +35,7 @@ export function CTA({
         <p>{copy}</p>
 
         <div className="btn-row">
-          <Link className="btn btn-signal" href="/contacto/">
-            Solicitar evaluación tecnológica
-            <ArrowUpRight size={18} />
-          </Link>
+          <BookingLink className="btn btn-signal" />
           <a
             className="btn btn-line"
             href={contact.whatsapp}
@@ -67,6 +65,7 @@ export function Footer() {
           <div>
             <h3>Soluciones</h3>
             <div className="footer-col">
+              <Link href="/diseno-web/">Diseño web</Link>
               <Link href="/medicion-de-productividad/">
                 Productividad con IA
               </Link>

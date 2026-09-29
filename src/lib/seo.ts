@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { contact, siteUrl } from "./content";
 
 export const siteDescription =
-  "IA y automatización, marketing digital, software a medida, redes, seguridad y soporte IT para negocios de Miami y South Florida. Un solo aliado tecnológico.";
+  "IA y automatización, marketing digital, software a medida, redes, seguridad y soporte IT para negocios de Florida. Un solo aliado tecnológico.";
 
 export function pageMetadata(
   title: string,

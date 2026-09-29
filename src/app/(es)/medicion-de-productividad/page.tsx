@@ -57,7 +57,7 @@ export default function ProductivityPage() {
           name: "Medición de productividad con inteligencia artificial",
           url: new URL("/medicion-de-productividad/", siteUrl).href,
           provider: { "@id": `${siteUrl}/#organization` },
-          areaServed: "Miami · South Florida",
+          areaServed: "Miami · Florida",
         }}
       />
       <section className="page-hero">

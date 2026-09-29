@@ -21,3 +21,14 @@ No es una aplicación multiusuario ni sincroniza entre equipos. No usar en un or
 6. Exportar un respaldo JSON semanal y antes de borrar el navegador. Guardarlo en una ubicación privada.
 
 CSV sirve para análisis en una hoja de cálculo; JSON sirve para restauración. La importación combina por ID y conserva los registros existentes. No hay captura automática desde Formspree ni confirmación de reservas. Para eso se necesitará una integración de servidor y un destino privado autorizado.
+
+## Medir oportunidades y ventas
+
+- Cualificada: necesidad concreta confirmada, servicio adecuado y siguiente paso aceptado. Registra la evidencia; no se infiere de un clic o de enviar un formulario.
+- Ganada: acuerdo comercial aceptado. Registra la fecha de cierre y la venta acordada, separada de la propuesta inicial.
+- Cobrado: importe acumulado realmente recibido, actualizado manualmente; no puede superar la venta acordada.
+- El resumen filtra por fecha UTC de creación de la consulta (cohorte), no por fecha del cobro. Conversión = ganadas cualificadas / consultas cualificadas de esa cohorte. Sin denominador se muestra «Sin datos».
+- Los registros anteriores se conservan con calificación Pendiente y sin ventas o cobros inventados. Las ventas antiguas sin importe muestran una advertencia de total incompleto.
+- JSON versión 2 conserva los nuevos campos; también se pueden importar respaldos versión 1. CSV incluye todos los campos.
+
+Este panel es la fuente manual de resultados comerciales. GA4 sigue midiendo interacciones con consentimiento; no recibe nombres, teléfonos, notas, importes privados ni ventas ficticias. No hay sincronización automática ni acceso a pagos.

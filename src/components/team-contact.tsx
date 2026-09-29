@@ -24,7 +24,7 @@ export function TeamContact() {
         <ul>
           <li>
             <MapPin size={18} aria-hidden="true" />
-            Miami · South Florida
+            Miami · Florida
           </li>
           <li>
             <Languages size={18} aria-hidden="true" />
