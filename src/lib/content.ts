@@ -1,3 +1,6 @@
+import type { ComponentType } from "react";
+import * as lucide from "lucide-react";
+
 export const services = [
   {
     slug: "ia-y-automatizacion",
@@ -5,7 +8,7 @@ export const services = [
     short: "Menos tareas repetitivas. Más posibilidades.",
     description:
       "Conecta tus herramientas, automatiza procesos y convierte la inteligencia artificial en una ventaja para tu negocio.",
-    icon: "Sparkles",
+    icon: "Cpu",
     tag: "INTELIGENCIA APLICADA",
     items: [
       "Asistentes de IA para atención y operaciones",
@@ -19,7 +22,7 @@ export const services = [
     short: "Haz que las personas correctas te encuentren.",
     description:
       "Construye una presencia digital coherente con tu marca y una estrategia enfocada en atraer oportunidades de negocio.",
-    icon: "ChartNoAxesCombined",
+    icon: "TrendingUp",
     tag: "CRECIMIENTO DIGITAL",
     items: [
       "Estrategia y presencia de marca",
@@ -33,7 +36,7 @@ export const services = [
     short: "Tu forma de trabajar. Tu propio software.",
     description:
       "Diseñamos aplicaciones web e integraciones que responden a los procesos de tu empresa y pueden evolucionar contigo.",
-    icon: "Code2",
+    icon: "Braces",
     tag: "DESARROLLO CON PROPÓSITO",
     items: [
       "Aplicaciones web y portales empresariales",
@@ -84,6 +87,23 @@ export const services = [
     ],
   },
 ] as const;
+
+export type ServiceIcon = (typeof services)[number]["icon"];
+
+/**
+ * Mapa explícito y tipado entre el nombre de icono declarado en cada servicio
+ * y el componente real de Lucide. Si se añade un servicio con un icono nuevo,
+ * TypeScript obliga a registrarlo aquí (evita datos muertos o desincronizados).
+ */
+export const serviceIcons: Record<ServiceIcon, ComponentType<{ size?: number }>> = {
+  Cpu: lucide.Cpu,
+  TrendingUp: lucide.TrendingUp,
+  Braces: lucide.Braces,
+  Network: lucide.Network,
+  ShieldCheck: lucide.ShieldCheck,
+  Headset: lucide.Headset,
+};
+
 export const siteUrl = "https://www.datalinkcorporation.com";
 
 export const contact = {

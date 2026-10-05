@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { AboutSection, Results } from "@/components/home/story-sections";
 import { DatalinkNetwork } from "@/components/network/datalink-network";
 import { CTA } from "@/components/footer";
@@ -11,6 +12,12 @@ export default function About() {
   return (
     <>
       <section className="container about-hero">
+        <Breadcrumbs
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Nosotros" },
+          ]}
+        />
         <div>
           <span className="eyebrow">SOMOS DATALINK TECH CORP</span>
           <h1>

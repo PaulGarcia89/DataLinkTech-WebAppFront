@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { RestaurantDigitalTwin } from "@/components/industries/restaurant-digital-twin";
 import { InteractiveDemo } from "@/components/demo/interactive-demo";
 import { CTA } from "@/components/footer";
@@ -23,6 +24,13 @@ export default function Restaurants() {
         }}
       />
       <section className="container page-intro">
+        <Breadcrumbs
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Industrias", href: "/industrias/" },
+            { label: "Restaurantes" },
+          ]}
+        />
         <span className="eyebrow">
           RESTAURANTES / DE LA PRIMERA CONSULTA A LA PRÓXIMA VISITA
         </span>

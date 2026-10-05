@@ -1,7 +1,9 @@
+# Dependencies
 node_modules/
-.next/
+
+# Build Outputs
 out/
-.env*
-!.env.example
-*.tsbuildinfo
-.DS_Store
+.next/
+
+# TypeScript
+tsconfig.tsbuildinfo

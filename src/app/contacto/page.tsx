@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { contact } from "@/lib/content";
 import { ContactForm } from "@/components/contact-form";
 export const metadata = pageMetadata(
@@ -8,7 +9,16 @@ export const metadata = pageMetadata(
 );
 export default function Contact() {
   return (
-    <section className="container section contact-grid">
+    <>
+      <div className="container page-intro">
+        <Breadcrumbs
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Contacto" },
+          ]}
+        />
+      </div>
+      <section className="container section-topless contact-grid">
       <div>
         <span className="eyebrow">CONECTEMOS IDEAS</span>
         <h1>
@@ -44,5 +54,6 @@ export default function Contact() {
       </div>
       <ContactForm />
     </section>
+    </>
   );
 }
