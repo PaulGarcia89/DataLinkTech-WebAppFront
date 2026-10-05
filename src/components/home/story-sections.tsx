@@ -8,15 +8,24 @@ import { ServiceNetwork } from "@/components/solutions/service-network";
 import { RestaurantDigitalTwin } from "@/components/industries/restaurant-digital-twin";
 import { BeforeAfter } from "./before-after";
 
-export function AISection() {
+/**
+ * Secciones narrativas reutilizables. Cada sección acepta `eyebrow` e `id`
+ * opcionales para poder usarse en varias páginas sin duplicar anclas ni
+ * arrastrar contexto fijo de la home (por defecto, conservan las de inicio).
+ */
+export function AISection({
+  eyebrow = "01 / DE UNA CONSULTA A TODO UN PROCESO",
+  id = "demo",
+}: {
+  eyebrow?: string;
+  id?: string;
+} = {}) {
   return (
-    <section id="demo" className="section light-section">
+    <section id={id} className="section light-section">
       <div className="container">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">
-              01 / DE UNA CONSULTA A TODO UN PROCESO
-            </span>
+            <span className="eyebrow">{eyebrow}</span>
             <h2>
               Tu negocio.
               <br />
@@ -53,12 +62,18 @@ export function AISection() {
     </section>
   );
 }
-export function EcosystemSection() {
+export function EcosystemSection({
+  eyebrow = "02 / EL ECOSISTEMA DATALINK",
+  id = "soluciones",
+}: {
+  eyebrow?: string;
+  id?: string;
+} = {}) {
   return (
-    <section className="section container" id="soluciones">
+    <section className="section container" id={id}>
       <div className="section-heading">
         <div>
-          <span className="eyebrow">02 / EL ECOSISTEMA DATALINK</span>
+          <span className="eyebrow">{eyebrow}</span>
           <h2>
             Todo conectado.
             <br />
@@ -74,13 +89,19 @@ export function EcosystemSection() {
     </section>
   );
 }
-export function RestaurantSection() {
+export function RestaurantSection({
+  eyebrow = "03 / DEL MUNDO DIGITAL A TU LOCAL",
+  id = "industrias",
+}: {
+  eyebrow?: string;
+  id?: string;
+} = {}) {
   return (
-    <section className="section restaurant-section" id="industrias">
+    <section className="section restaurant-section" id={id}>
       <div className="container">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">03 / DEL MUNDO DIGITAL A TU LOCAL</span>
+            <span className="eyebrow">{eyebrow}</span>
             <h2>
               La próxima conexión
               <br />

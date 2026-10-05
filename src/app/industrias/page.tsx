@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Building2, Store, UtensilsCrossed } from "lucide-react";
 import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { RestaurantSection } from "@/components/home/story-sections";
 import { CTA } from "@/components/footer";
 export const metadata = pageMetadata(
@@ -12,6 +13,12 @@ export default function Industries() {
   return (
     <>
       <section className="container page-intro">
+        <Breadcrumbs
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Industrias" },
+          ]}
+        />
         <span className="eyebrow">INDUSTRIAS / MIAMI + SOUTH FLORIDA</span>
         <h1>
           Tu negocio tiene
@@ -56,7 +63,7 @@ export default function Industries() {
           ))}
         </div>
       </section>
-      <RestaurantSection />
+      <RestaurantSection eyebrow="CASO DESTACADO / RESTAURANTES" id="caso-restaurantes" />
       <CTA />
     </>
   );

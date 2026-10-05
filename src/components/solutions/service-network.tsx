@@ -1,17 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useId, useState } from "react";
-import {
-  ArrowUpRight,
-  Braces,
-  Cpu,
-  Headset,
-  Network,
-  ShieldCheck,
-  TrendingUp,
-} from "lucide-react";
-import { services } from "@/lib/content";
-const icons = [Cpu, TrendingUp, Braces, Network, ShieldCheck, Headset];
+import { ArrowUpRight } from "lucide-react";
+import { services, serviceIcons } from "@/lib/content";
 const outcomes = [
   [
     "Tu equipo repite tareas que podrían conectarse.",
@@ -51,7 +42,7 @@ export function ServiceNetwork() {
         </div>
         <div className="service-branches">
           {services.map((service, i) => {
-            const Icon = icons[i];
+            const Icon = serviceIcons[service.icon];
             return (
               <button
                 key={service.slug}

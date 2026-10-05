@@ -1,4 +1,13 @@
-@import "tailwindcss";
+/*
+ * Enfoque CSS decidido: sistema propio (clases semánticas + tokens en
+ * src/styles/tokens.css). Tailwind se importa SOLO por su capa de reset
+ * (preflight); no se usan utilidades en los componentes. Si en el futuro
+ * se quisieran utilidades, basta con mantener este import; si se quiere
+ * un bundle mínimo, sustituir esta línea por `@layer reset` propio y
+ * quitar @tailwindcss/postcss de postcss.config.mjs.
+ */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
 @import "../styles/tokens.css";
 
 * {
@@ -43,6 +52,23 @@ textarea {
 :focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 5px;
+}
+/* Accessible visually-hidden helper (screen-reader-only text) */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+/* Mobile menu open: lock background scroll */
+body.menu-open {
+  overflow: hidden;
 }
 ::selection {
   background: var(--cyan);
@@ -108,7 +134,7 @@ section {
 }
 .eyebrow,
 .micro-label {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -284,7 +310,7 @@ section {
 }
 .brand-word small {
   display: block;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.42em;
   font-weight: 400;
   margin-top: 1px;
@@ -295,7 +321,7 @@ section {
   align-items: center;
 }
 .desktop-nav a {
-  font-size: 12px;
+  font-size: 14px;
   color: #b9c4d1;
   padding: 14px 0;
 }
@@ -352,7 +378,7 @@ section {
   z-index: 2;
 }
 .hero-copy .eyebrow {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 32px;
 }
 .hero-copy h1 {
@@ -372,7 +398,7 @@ section {
   gap: 12px;
   min-height: 44px;
   margin-top: 14px;
-  font-size: 11px;
+  font-size: 13px;
   color: #c2ccda;
 }
 .hero-secondary:hover {
@@ -387,7 +413,7 @@ section {
   border-top: 1px solid var(--line);
   padding: 24px 0;
   margin-top: 64px;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--muted);
 }
@@ -415,7 +441,7 @@ section {
 .network-caption {
   display: flex;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   color: var(--muted);
 }
@@ -496,7 +522,7 @@ section {
   letter-spacing: 0.05em;
 }
 .network-core small {
-  font-size: 6px;
+  font-size: 9px;
   letter-spacing: 0.14em;
   margin-top: 5px;
   color: var(--muted);
@@ -523,7 +549,7 @@ section {
 .data-node span {
   position: absolute;
   top: calc(100% + 9px);
-  font-size: 8px;
+  font-size: 10px;
   white-space: nowrap;
   letter-spacing: 0.09em;
   color: #afc2d5;
@@ -550,19 +576,19 @@ section {
   min-height: 100px;
 }
 .network-description strong {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text);
 }
 .network-description p {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
   margin: 5px 0 0;
   max-width: 320px;
 }
 .network-index {
   font-family: monospace;
-  font-size: 11px;
+  font-size: 12px;
   margin-left: auto;
   color: var(--muted);
 }
@@ -585,7 +611,7 @@ section {
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted-light);
 }
 .inline-workflow svg {
@@ -606,7 +632,7 @@ section {
   gap: 16px;
   padding: 18px 24px;
   border-bottom: 1px solid var(--line-light);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.09em;
 }
 .console-toolbar > span:first-child {
@@ -615,7 +641,7 @@ section {
   align-items: center;
 }
 .simulation-tag {
-  font-size: 9px;
+  font-size: 11px;
   padding: 5px 8px;
   border: 1px solid #b8c5d0;
   border-radius: 3px;
@@ -633,7 +659,7 @@ section {
   min-height: 44px;
   border-radius: 4px;
   color: #536274;
-  font-size: 12px;
+  font-size: 13px;
 }
 .demo-options button[aria-pressed="true"] {
   background: var(--ink);
@@ -660,7 +686,7 @@ section {
 }
 .chat-bubble > span {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted-light);
   margin-top: 12px;
 }
@@ -736,7 +762,7 @@ section {
   color: #506071;
 }
 .demo-flow li p {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.5;
   margin: 5px 0 0;
   min-height: 17px;
@@ -774,7 +800,7 @@ section {
   justify-content: space-between;
   gap: 24px;
   margin: 32px 0 0;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--muted-light);
 }
@@ -798,7 +824,7 @@ section {
   gap: 12px;
 }
 .comparison-heading button {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.07em;
   padding: 12px 0;
   background: none;
@@ -839,10 +865,17 @@ section {
   margin: 20px 0;
   padding: 0;
   color: #566577;
-  transition: color var(--normal);
+  opacity: 0.38;
+  filter: grayscale(0.5);
+  transition:
+    color var(--normal),
+    opacity var(--normal),
+    filter var(--normal);
 }
 .comparison-columns ul.emphasized {
   color: var(--ink);
+  opacity: 1;
+  filter: none;
 }
 .comparison-columns li {
   display: flex;
@@ -857,7 +890,7 @@ section {
 .comparison > p {
   border-top: 1px solid var(--line-light);
   padding-top: 20px;
-  font-size: 12px;
+  font-size: 13px;
 }
 /* Connected ecosystem */
 .service-explorer {
@@ -876,7 +909,7 @@ section {
 }
 .service-root > span:last-child {
   margin-left: auto;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--muted);
   max-width: 120px;
@@ -928,13 +961,13 @@ section {
 .service-branches button > span small {
   display: block;
   color: var(--cyan);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   margin-top: 7px;
 }
 .branch-index {
   font-family: monospace;
-  font-size: 10px;
+  font-size: 12px;
 }
 .service-panel {
   border-top: 1px solid var(--cyan);
@@ -949,7 +982,7 @@ section {
   margin: 32px 0;
 }
 .service-panel dt {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.13em;
   color: var(--cyan);
   margin-top: 24px;
@@ -987,7 +1020,7 @@ section {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.09em;
   color: var(--muted);
 }
@@ -1014,7 +1047,7 @@ section {
 .floor-zone {
   border: 1px solid #385065;
   padding: 10px;
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 0.15em;
   color: #829ab2;
 }
@@ -1108,7 +1141,7 @@ section {
   gap: 12px;
 }
 .twin-flow > span {
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.6;
   color: #b0c1d1;
 }
@@ -1117,7 +1150,7 @@ section {
   color: var(--cyan);
   font-family: monospace;
   font-style: normal;
-  font-size: 9px;
+  font-size: 11px;
   margin-bottom: 8px;
 }
 .layer-tabs {
@@ -1136,7 +1169,7 @@ section {
   background: none;
   color: var(--muted);
   border-radius: 3px;
-  font-size: 11px;
+  font-size: 12px;
 }
 .layer-tabs button[aria-pressed="true"] {
   background: #083348;
@@ -1153,7 +1186,7 @@ section {
   min-height: 101px;
 }
 .twin-content > .micro-label {
-  font-size: 9px;
+  font-size: 11px;
   border-top: 1px solid var(--line);
   padding-top: 20px;
 }
@@ -1181,7 +1214,7 @@ section {
   color: var(--text);
 }
 .growth-engine > .micro-label {
-  font-size: 9px;
+  font-size: 11px;
   margin-bottom: 20px;
   color: #a6b2c3;
 }
@@ -1195,7 +1228,7 @@ section {
 .growth-stage > span {
   font-family: monospace;
   color: var(--cyan);
-  font-size: 10px;
+  font-size: 12px;
 }
 .growth-stage strong {
   font-size: 13px;
@@ -1204,7 +1237,7 @@ section {
 }
 .growth-stage small {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: #a6b2c3;
   font-weight: 400;
   margin-top: 5px;
@@ -1213,7 +1246,7 @@ section {
   color: var(--cyan);
 }
 .growth-engine > p {
-  font-size: 10px !important;
+  font-size: 12px !important;
   color: #a6b2c3 !important;
   margin: 20px 0 0;
 }
@@ -1255,7 +1288,7 @@ section {
   min-width: 0;
 }
 .software-content .micro-label {
-  font-size: 7px;
+  font-size: 10px;
   color: #a6b2c3;
 }
 .software-content .console-title {
@@ -1274,11 +1307,11 @@ section {
 }
 .operation-row > span {
   flex: 1;
-  font-size: 11px;
+  font-size: 13px;
 }
 .operation-row small {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   color: #a6b2c3;
   margin-top: 5px;
 }
@@ -1290,7 +1323,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  font-size: 9px;
+  font-size: 11px;
   color: #b9c8d4;
   padding: 16px;
   border-top: 1px solid #34495c;
@@ -1327,7 +1360,7 @@ section {
 }
 .results-list li span {
   font-family: monospace;
-  font-size: 10px;
+  font-size: 12px;
   color: #5c6c7b;
 }
 .results-list li svg {
@@ -1359,7 +1392,7 @@ section {
 .approach-list li > span {
   font-family: monospace;
   color: var(--cyan);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 2;
 }
 .approach-list li h3 {
@@ -1426,7 +1459,7 @@ section {
   gap: 28px;
 }
 .cta-actions .text-link {
-  font-size: 12px;
+  font-size: 13px;
 }
 footer {
   border-top: 1px solid var(--line);
@@ -1444,7 +1477,7 @@ footer {
   margin-bottom: 20px;
 }
 .footer-grid p {
-  font-size: 11px;
+  font-size: 13px;
   margin-top: 24px;
   line-height: 1.8;
 }
@@ -1452,7 +1485,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   min-height: 34px;
   overflow-wrap: anywhere;
@@ -1461,7 +1494,7 @@ footer {
   color: var(--cyan);
 }
 .footer-location {
-  font-size: 10px;
+  font-size: 12px;
   color: #b0c5d9;
 }
 .footer-bottom {
@@ -1471,7 +1504,7 @@ footer {
   border-top: 1px solid var(--line);
   padding-top: 24px;
   margin-top: 48px;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: #91a2b7;
 }
@@ -1529,13 +1562,63 @@ footer {
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.8;
 }
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.breadcrumb li:not(:last-child):after {
+  content: "/";
+  color: #5a6b7e;
+}
 .breadcrumb a:hover {
   color: var(--cyan);
+}
+/* Next service navigation on service pages */
+.service-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  margin-top: var(--section-space);
+  padding-top: 32px;
+}
+.service-next .micro-label {
+  display: block;
+  margin-bottom: 10px;
+}
+.service-next h2 {
+  font-size: clamp(24px, 2.6vw, 34px);
+}
+.service-next a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  white-space: nowrap;
+}
+.service-next a:hover {
+  color: var(--cyan);
+}
+@media (max-width: 767px) {
+  .service-next {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 .service-hero-grid {
   display: grid;
@@ -1663,7 +1746,7 @@ footer {
 }
 .contact-note small {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 10px;
   color: var(--muted);
 }
@@ -1677,12 +1760,12 @@ footer {
   font-size: 26px;
 }
 .contact-form > p {
-  font-size: 12px;
+  font-size: 13px;
   margin: 14px 0 24px;
 }
 .contact-form label {
   display: block;
-  font-size: 12px;
+  font-size: 13px;
   color: #c7d3e2;
   margin-bottom: 20px;
 }
@@ -1773,7 +1856,7 @@ textarea {
     padding: 10px;
   }
   .data-node span {
-    font-size: 7px;
+    font-size: 10px;
   }
   .network-core {
     width: 116px;
@@ -1783,7 +1866,7 @@ textarea {
     font-size: 52px;
   }
   .hero-bottom > span:nth-child(2) {
-    font-size: 7px;
+    font-size: 10px;
     gap: 10px;
   }
   .service-explorer,
@@ -1843,7 +1926,7 @@ textarea {
     font-size: 46px;
   }
   .hero-copy .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
   }
   .hero-description {
     font-size: 13px;
@@ -1858,17 +1941,17 @@ textarea {
     display: none;
   }
   .network-description strong {
-    font-size: 11px;
+    font-size: 13px;
   }
   .network-description p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .network-index {
     display: none;
   }
   .hero-bottom {
     margin-top: 40px;
-    font-size: 8px;
+    font-size: 11px;
   }
   .hero-bottom > span:nth-child(2) {
     display: none;
@@ -1964,7 +2047,7 @@ textarea {
     font-size: clamp(46px, 9vw, 65px);
   }
   .hero-copy .eyebrow {
-    font-size: 9px;
+    font-size: 12px;
     margin-bottom: 24px;
   }
   .hero-description {
@@ -1972,7 +2055,7 @@ textarea {
     max-width: 520px;
   }
   .hero-secondary {
-    font-size: 11px;
+    font-size: 13px;
   }
   .hero .network-experience {
     margin-top: 28px;
@@ -2002,7 +2085,7 @@ textarea {
   }
   .data-node span {
     position: static;
-    font-size: 7px;
+    font-size: 10px;
     white-space: normal;
     line-height: 1.5;
   }
@@ -2013,10 +2096,10 @@ textarea {
     display: block;
   }
   .network-description strong {
-    font-size: 12px;
+    font-size: 13px;
   }
   .network-description p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .hero-bottom {
     margin-top: 24px;
@@ -2053,25 +2136,25 @@ textarea {
     flex-wrap: wrap;
   }
   .demo-controls .button {
-    font-size: 12px;
+    font-size: 13px;
     gap: 12px;
     padding: 14px 16px;
   }
   .demo-controls .button-plain {
-    font-size: 11px;
+    font-size: 12px;
   }
   .console-toolbar {
     padding: 16px;
-    font-size: 8px;
+    font-size: 11px;
   }
   .simulation-tag {
-    font-size: 8px;
+    font-size: 11px;
   }
   .demo-options {
     padding: 20px 16px 0;
   }
   .demo-options button {
-    font-size: 11px;
+    font-size: 12px;
     padding: 10px 13px;
   }
   .chat-bubble {
@@ -2080,7 +2163,7 @@ textarea {
   .ai-applications {
     gap: 18px;
     justify-content: flex-start;
-    font-size: 8px;
+    font-size: 11px;
   }
   .comparison-intro {
     margin-top: 64px;
@@ -2103,7 +2186,7 @@ textarea {
     margin-top: 3px;
   }
   .comparison-heading button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .service-explorer {
     grid-template-columns: 1fr;
@@ -2139,10 +2222,10 @@ textarea {
     gap: 8px;
   }
   .twin-flow > span {
-    font-size: 8px;
+    font-size: 12px;
   }
   .layer-tabs button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .editorial-pair,
   .results-layout,
@@ -2205,7 +2288,7 @@ textarea {
   .footer-bottom {
     flex-direction: column;
     gap: 14px;
-    font-size: 8px;
+    font-size: 12px;
   }
   .page-intro {
     padding-top: 56px;
@@ -2288,10 +2371,10 @@ textarea {
     font-size: 45px;
   }
   .hero-copy .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
   }
   .hero-secondary {
-    font-size: 10px;
+    font-size: 12px;
   }
   .brand-word {
     font-size: 18px;
@@ -2310,16 +2393,16 @@ textarea {
   }
   .floor-zone {
     padding: 6px;
-    font-size: 6px;
+    font-size: 9px;
   }
   .tables {
     gap: 10px;
   }
   .twin-top {
-    font-size: 6px;
+    font-size: 10px;
   }
   .twin-flow > span {
-    font-size: 7px;
+    font-size: 12px;
   }
   .demo-controls .icon-button {
     margin-left: 0;
@@ -2331,7 +2414,7 @@ textarea {
     font-size: 11px;
   }
   .service-root > span:last-child {
-    font-size: 6px;
+    font-size: 10px;
     max-width: 115px;
   }
   .form-row {

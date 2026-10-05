@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "preview": "npx serve out"
+    "format": "prettier --write \"{src,scripts}/**/*.{ts,tsx,css,mjs}\"",
+    "format:check": "prettier --check \"{src,scripts}/**/*.{ts,tsx,css,mjs}\"",
+    "preview": "npm run build && serve out"
   },
   "repository": {
     "type": "git",
@@ -36,8 +39,8 @@
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.5",
-    "lighthouse": "^13.5.0",
     "prettier": "^3.9.8",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   },

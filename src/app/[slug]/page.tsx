@@ -5,6 +5,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { services, siteUrl } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CTA } from "@/components/footer";
 import {
   AIWorkflow,
@@ -45,6 +46,8 @@ export default async function ServicePage({
   const ai = slug === "ia-y-automatizacion";
   const marketing = slug === "marketing-digital";
   const software = slug === "software-a-medida";
+  const currentIndex = services.findIndex((item) => item.slug === slug);
+  const next = services[(currentIndex + 1) % services.length];
   return (
     <>
       <StructuredData
@@ -59,11 +62,13 @@ export default async function ServicePage({
         }}
       />
       <section className="container service-hero">
-        <nav className="breadcrumb" aria-label="Ruta de navegación">
-          <Link href="/soluciones/">Soluciones</Link>
-          <span>/</span>
-          <span>{s.name}</span>
-        </nav>
+        <Breadcrumbs
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Soluciones", href: "/soluciones/" },
+            { label: s.name },
+          ]}
+        />
         <div className="service-hero-grid">
           <div>
             <span className="eyebrow">{s.tag} / MIAMI + SOUTH FLORIDA</span>
@@ -200,6 +205,17 @@ export default async function ServicePage({
           ))}
         </div>
       </section>
+      <div className="container">
+        <nav className="service-next" aria-label="Siguiente solución">
+          <div>
+            <span className="micro-label">SIGUIENTE SOLUCIÓN</span>
+            <h2>{next.name}</h2>
+          </div>
+          <Link className="text-link" href={`/${next.slug}/`}>
+            {next.short} <ArrowUpRight size={18} />
+          </Link>
+        </nav>
+      </div>
       <CTA />
     </>
   );

@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { EcosystemSection } from "@/components/home/story-sections";
 import { CTA } from "@/components/footer";
 export const metadata = pageMetadata(
@@ -10,6 +11,12 @@ export default function Solutions() {
   return (
     <>
       <div className="container page-intro">
+        <Breadcrumbs
+          items={[
+            { label: "Inicio", href: "/" },
+            { label: "Soluciones" },
+          ]}
+        />
         <span className="eyebrow">SOLUCIONES / DATALINK</span>
         <h1>
           Una visión integral.
@@ -21,7 +28,7 @@ export default function Solutions() {
           necesarias para resolverlo.
         </p>
       </div>
-      <EcosystemSection />
+      <EcosystemSection eyebrow="ECOSISTEMA / CAPACIDADES" id="ecosistema" />
       <CTA />
     </>
   );

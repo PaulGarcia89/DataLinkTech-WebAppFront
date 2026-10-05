@@ -14,12 +14,15 @@ npm run dev
 ## Validación y publicación
 
 ```sh
-npm run lint
-npm run typecheck
-npm run build
+npm run lint        # ESLint
+npm run lint:fix    # ESLint con autocorrección
+npm run format      # Prettier (escritura)
+npm run format:check # Prettier (solo verificación)
+npm run typecheck   # TypeScript sin emitir
+npm run build       # Genera out/ (export estático)
 ```
 
-La compilación genera `out/`. Para revisarla: `npm run preview`.
+Para revisar la compilación: `npm run preview` (ejecuta `build` y sirve `out/` con `serve`, instalado como devDependency; no depende de descargas de `npx`).
 
 La rama `main` despliega producción en Vercel, proyecto `data-link-tech-web-app-front`. Las ramas de trabajo generan previews antes de promover cambios. Next.js genera `out/` con `npm run build`.
 
