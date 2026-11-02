@@ -16,7 +16,6 @@ export function CommercialPreview() {
   ];
   return (
     <section className="commercial-preview plane">
-      <div className="ambient-workstation" aria-hidden="true" />
       <div className="container">
         <p className="eyebrow">DE LA CONSULTA AL SEGUIMIENTO</p>
         <div className="commercial-preview-grid">
@@ -38,8 +37,13 @@ export function CommercialPreview() {
             <ol className="commercial-flow">
               {steps.map(({ label, icon: Icon }, i) => (
                 <li key={label}>
-                  <Icon size={24} aria-hidden="true" />
-                  <span>{label}</span>
+                  <span className="commercial-step-icon">
+                    <Icon size={22} aria-hidden="true" />
+                  </span>
+                  <span className="commercial-step-label">
+                    <small>0{i + 1}</small>
+                    {label}
+                  </span>
                   {i < 3 && <ArrowRight size={16} aria-hidden="true" />}
                 </li>
               ))}

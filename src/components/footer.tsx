@@ -1,50 +1,98 @@
+import styles from "@/styles/contact-cta.module.css";
 import { BookingLink } from "./booking-link";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Mail, MessageCircle, Phone } from "lucide-react";
+import {
+  ArrowUpRight,
+  MapPin,
+  Mail,
+  MessageCircle,
+  Phone,
+  Clock3,
+  AudioLines,
+  Route,
+  ListChecks,
+} from "lucide-react";
 import { BrandLogo } from "./brand-logo";
 import { brand, contact, sectors, services } from "@/lib/content";
 
 import { businessProfile } from "@/i18n/business-profile";
 
 export function CTA({
-  title = (
-    <>
-      Conectemos lo que tu
-      <br />
-      negocio ya puede <em>hacer.</em>
-    </>
-  ),
+  title = <>Hablemos de lo que tu negocio necesita.</>,
   copy = "Revisamos tu operación, identificamos qué conviene automatizar o conectar primero y te proponemos un plan realista. Sin compromiso.",
 }: {
   title?: React.ReactNode;
   copy?: string;
 }) {
   return (
-    <section className="cta">
-      <div className="ambient-workstation" aria-hidden="true" />
+    <section
+      className={styles.section}
+      id="consulta"
+      aria-label="Conversemos sobre tu proyecto"
+    >
       <div className="container">
-        <div className="cta-converge" aria-hidden="true">
-          <svg viewBox="0 0 560 90" role="presentation">
-            <path d="M0 8 Q220 8 280 74 M0 40 Q220 40 280 74 M0 72 Q220 72 280 74 M560 8 Q340 8 280 74 M560 40 Q340 40 280 74 M560 72 Q340 72 280 74" />
-            <circle cx="280" cy="76" r="5" />
-          </svg>
-        </div>
-
-        <p className="eyebrow">EL SIGUIENTE PASO</p>
-        <h2>{title}</h2>
-        <p>{copy}</p>
-
-        <div className="btn-row">
-          <BookingLink className="btn btn-signal" />
-          <a
-            className="btn btn-line"
-            href={contact.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MessageCircle size={18} />
-            Escribir por WhatsApp
-          </a>
+        <div className={styles.panel}>
+          <div className={styles.copy}>
+            <p className={styles.eyebrow}>
+              <span aria-hidden="true" />
+              EL SIGUIENTE PASO
+            </p>
+            <h2>{title}</h2>
+            <p className={styles.description}>{copy}</p>
+            <div className={styles.actions}>
+              <BookingLink className={styles.primary} />
+              <a
+                className={styles.secondary}
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={19} aria-hidden="true" />
+                Escribir por WhatsApp
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+            <p className={styles.reassurance}>
+              Sin compromiso · En español o inglés
+            </p>
+          </div>
+          <aside className={styles.agenda}>
+            <div className={styles.agendaTop}>
+              <span className={styles.agendaLabel}>TU PRIMERA CONSULTA</span>
+              <span className={styles.duration}>
+                <Clock3 size={15} aria-hidden="true" />
+                30 min
+              </span>
+            </div>
+            <h3>
+              Una conversación.
+              <br />
+              Un punto de partida.
+            </h3>
+            <ol>
+              <li>
+                <AudioLines size={20} aria-hidden="true" />
+                <div>
+                  <strong>Escuchamos tu reto</strong>
+                  <p>Qué necesitas resolver y cómo trabajas hoy.</p>
+                </div>
+              </li>
+              <li>
+                <Route size={20} aria-hidden="true" />
+                <div>
+                  <strong>Conectamos las piezas</strong>
+                  <p>Tus herramientas, tu equipo y tus prioridades.</p>
+                </div>
+              </li>
+              <li>
+                <ListChecks size={20} aria-hidden="true" />
+                <div>
+                  <strong>Definimos el siguiente paso</strong>
+                  <p>Un alcance inicial para avanzar con claridad.</p>
+                </div>
+              </li>
+            </ol>
+          </aside>
         </div>
       </div>
     </section>

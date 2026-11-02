@@ -1,0 +1,243 @@
+/* Shared contact section: one style source, no decorative device imagery. */
+.section {
+  --cta-surface: #0c2844;
+  --cta-strong: #fff;
+  --cta-muted: #bfcedc;
+  --cta-accent: #78dcf2;
+  --cta-line: #ffffff24;
+  padding-block: clamp(40px, 5vw, 72px);
+  background: var(--paper);
+}
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 76px);
+  align-items: center;
+  padding: clamp(28px, 4.5vw, 64px);
+  border-radius: 24px;
+  background: var(--cta-surface);
+  color: var(--cta-strong);
+  border: 1px solid #183d5d;
+}
+.copy {
+  min-width: 0;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cta-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+.eyebrow > span {
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+}
+.panel h2 {
+  color: var(--cta-strong);
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  max-width: 19ch;
+  text-wrap: balance;
+  margin: 0;
+}
+.panel h2 em {
+  color: inherit;
+  font-style: normal;
+}
+.description {
+  color: var(--cta-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 53ch;
+  margin-top: 24px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 32px;
+}
+.primary,
+.secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--t-fast, 160ms),
+    color var(--t-fast, 160ms);
+  border-radius: 8px;
+}
+.primary {
+  background: var(--cta-strong);
+  color: var(--cta-surface);
+  padding: 14px 20px;
+  border: 1px solid var(--cta-strong);
+}
+.primary:hover {
+  background: #def5fc;
+  color: var(--cta-surface);
+}
+.secondary {
+  padding: 14px 4px;
+  color: var(--cta-strong);
+}
+.secondary:hover {
+  color: var(--cta-accent);
+}
+.actions a:focus-visible {
+  outline: 3px solid var(--cta-accent);
+  outline-offset: 5px;
+}
+.actions svg {
+  flex-shrink: 0;
+}
+.reassurance {
+  color: var(--cta-muted);
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.agenda {
+  padding-left: clamp(24px, 3vw, 44px);
+  border-left: 1px solid var(--cta-line);
+  min-width: 0;
+}
+.agendaTop {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+.agendaLabel {
+  color: var(--cta-muted);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+}
+.duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--cta-accent);
+  font-size: 12px;
+}
+.agenda h3 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--cta-strong);
+}
+.agenda ol {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+}
+.agenda li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid var(--cta-line);
+}
+.agenda li > svg {
+  flex: 0 0 20px;
+  color: var(--cta-accent);
+  margin-top: 2px;
+}
+.agenda strong {
+  color: var(--cta-strong);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.agenda li p {
+  color: var(--cta-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  margin-top: 5px;
+}
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .panel h2 {
+    max-width: 24ch;
+  }
+  .agenda {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--cta-line);
+    padding-top: 28px;
+  }
+  .agenda ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .agenda li {
+    display: block;
+  }
+  .agenda li > svg {
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .panel {
+    padding: 30px 24px;
+    border-radius: 18px;
+  }
+  .panel h2 {
+    font-size: clamp(1.85rem, 7.6vw, 2.6rem);
+  }
+  .eyebrow {
+    font-size: 10px;
+    margin-bottom: 22px;
+  }
+  .description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .secondary {
+    border: 1px solid var(--cta-line);
+  }
+  .agenda ol {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .agenda li {
+    display: flex;
+  }
+  .reassurance {
+    text-align: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary,
+  .secondary {
+    transition: none;
+  }
+}
