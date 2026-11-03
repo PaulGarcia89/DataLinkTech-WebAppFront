@@ -817,7 +817,7 @@ body:has(.operations-hero) .language-switch {
 .platform-preview-intro .link-arrow { margin-top: 26px; }
 .platform-preview-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .platform-preview-card { position: relative; min-width: 0; overflow: hidden; border-left: 1px solid #cbd3d8; padding: 0 0 8px 20px; transition: transform .45s var(--ease), border-color .3s ease, box-shadow .45s ease; }
-.platform-preview-card::after { content: ""; position: absolute; left: 20px; right: 0; bottom: 0; height: 2px; background: #0066ff; transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+.platform-preview-card::after { content: ""; position: absolute; left: 20px; right: 0; bottom: 0; height: 2px; background: #0066ff; transform: scaleX(.28); transform-origin: left; transition: transform .45s var(--ease); }
 .platform-card-index { display: block; margin-bottom: 10px; color: #0066ff; font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; }
 .platform-preview-card img { width: 100%; aspect-ratio: 1.35; object-fit: cover; transition: transform .65s var(--ease), filter .45s ease; }
 .platform-preview-card h3 { margin-top: 16px; color: #102942; font-size: 15px; transition: color .3s ease; }
@@ -831,7 +831,7 @@ body:has(.operations-hero) .language-switch {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .platform-preview-card { animation: platform-card-float 6s ease-in-out infinite; }
+  .platform-preview-card { animation: platform-card-float 4.8s ease-in-out infinite; }
   .platform-preview-card:nth-child(2) { animation-delay: -1.8s; }
   .platform-preview-card:nth-child(3) { animation-delay: -3.6s; }
   .platform-preview-card img { animation: platform-image-breathe 10s ease-in-out infinite alternate; }
@@ -841,8 +841,10 @@ body:has(.operations-hero) .language-switch {
 }
 
 @keyframes platform-card-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); box-shadow: 0 0 0 #10294200; }
+  25% { transform: translate3d(16px, -7px, 0) rotate(.35deg); box-shadow: 0 14px 24px #10294216; }
+  50% { transform: translate3d(0, -15px, 0) rotate(0deg); box-shadow: 0 20px 32px #10294222; }
+  75% { transform: translate3d(-16px, -7px, 0) rotate(-.35deg); box-shadow: 0 14px 24px #10294216; }
 }
 
 @keyframes platform-image-breathe {
