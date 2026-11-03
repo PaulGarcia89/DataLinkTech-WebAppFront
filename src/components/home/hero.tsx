@@ -103,8 +103,9 @@ export function Hero() {
               ["/images/restaurant.webp", "Datos y analítica", "Cámaras, sensores y sistemas de operación en una misma vista."],
               ["/images/warehouse.webp", "Infraestructura confiable", "Redes, seguridad y entornos escalables para operar sin interrupciones."],
               ["/images/productivity-cafe.webp", "Productividad con IA", "Visibilidad operativa para tomar decisiones y ejecutar mejoras."],
-            ].map(([image, title, copy]) => (
+            ].map(([image, title, copy], index) => (
               <article key={title} className="platform-preview-card">
+                <span className="platform-card-index">0{index + 1}</span>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={image} alt="" loading="lazy" />
                 <div><h3>{title}</h3><p>{copy}</p></div>
