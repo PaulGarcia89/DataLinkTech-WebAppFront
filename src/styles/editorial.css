@@ -664,10 +664,10 @@ body:has(.operations-hero) .site-header {
   color: #fff;
 }
 
-body:has(.operations-hero) .brand-type b,
-body:has(.operations-hero) .brand-type small,
-body:has(.operations-hero) .nav-link,
-body:has(.operations-hero) .menu-btn {
+body:has(.operations-hero) .site-header .brand-type b,
+body:has(.operations-hero) .site-header .brand-type small,
+body:has(.operations-hero) .site-header .nav-link,
+body:has(.operations-hero) .site-header .menu-btn {
   color: #fff;
 }
 
