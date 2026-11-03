@@ -810,7 +810,8 @@ body:has(.operations-hero) .language-switch {
   50% { opacity: 1; box-shadow: 0 0 28px 6px #0bd9ff; }
 }
 
-.platform-preview { padding: 58px 0 72px; background: #f7f7f2; }
+.platform-preview { position: relative; overflow: hidden; padding: 58px 0 72px; background: #f7f7f2; }
+.platform-preview::before { content: ""; position: absolute; top: 0; left: -28%; width: 28%; height: 2px; background: linear-gradient(90deg, transparent, #0066ff, #00b8ff, transparent); opacity: .8; }
 .platform-preview > .container { display: grid; grid-template-columns: .78fr 1.5fr; gap: clamp(32px, 6vw, 92px); align-items: center; }
 .platform-preview-intro h2 { margin: 19px 0 18px; color: #102942; font-size: clamp(34px, 3.4vw, 52px); letter-spacing: -.055em; line-height: 1.02; }
 .platform-preview-intro > p:not(.eyebrow) { max-width: 430px; color: #647386; line-height: 1.55; }
@@ -831,6 +832,9 @@ body:has(.operations-hero) .language-switch {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .platform-preview::before { animation: platform-scanline 7s linear infinite; }
+  .platform-preview-intro { animation: platform-intro-enter .9s var(--ease) both; }
+  .platform-preview-intro .link-arrow svg { animation: platform-link-nudge 2s ease-in-out infinite; }
   .platform-preview-card { animation: platform-card-float 4.8s ease-in-out infinite; }
   .platform-preview-card:nth-child(2) { animation-delay: -1.8s; }
   .platform-preview-card:nth-child(3) { animation-delay: -3.6s; }
@@ -838,6 +842,21 @@ body:has(.operations-hero) .language-switch {
   .platform-preview-card:nth-child(2) img { animation-delay: -2.4s; }
   .platform-preview-card:nth-child(3) img { animation-delay: -4.8s; }
   .platform-card-index { animation: platform-index-pulse 2.4s ease-in-out infinite; }
+}
+
+@keyframes platform-scanline {
+  from { transform: translateX(0); }
+  to { transform: translateX(460%); }
+}
+
+@keyframes platform-intro-enter {
+  from { opacity: 0; transform: translate3d(-24px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes platform-link-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
 }
 
 @keyframes platform-card-float {
