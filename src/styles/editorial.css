@@ -761,6 +761,55 @@ body:has(.operations-hero) .language-switch {
 .operations-flow p { max-width: 150px; margin-top: 8px; color: #f0fafc; font-size: 12px; line-height: 1.45; text-shadow: 0 1px 5px #001319; }
 .operations-flow-arrow { position: absolute; top: 56px; right: -9px; color: #08c8ff; }
 
+@media (prefers-reduced-motion: no-preference) {
+  .operations-flow li {
+    animation: operations-card-flow 7.5s ease-in-out infinite;
+    will-change: transform;
+  }
+  .operations-flow li:nth-child(2) { animation-delay: -1.7s; }
+  .operations-flow li:nth-child(3) { animation-delay: -3.4s; }
+  .operations-flow li:nth-child(4) { animation-delay: -5.1s; }
+  .operations-flow-arrow {
+    animation: operations-arrow-pulse 1.8s ease-in-out infinite;
+  }
+  .operations-art-image-main img {
+    animation: operations-image-pan 16s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  .operations-art-image-secondary img {
+    animation: operations-image-pan-secondary 13s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  .operations-art-glow {
+    animation: operations-glow-pulse 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes operations-card-flow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-13px) scale(1.012); }
+}
+
+@keyframes operations-arrow-pulse {
+  0%, 100% { opacity: .55; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(5px); }
+}
+
+@keyframes operations-image-pan {
+  from { transform: scale(1.02) translate3d(-1%, 0, 0); }
+  to { transform: scale(1.08) translate3d(2%, -1%, 0); }
+}
+
+@keyframes operations-image-pan-secondary {
+  from { transform: scale(1.03) translate3d(1%, 0, 0); }
+  to { transform: scale(1.1) translate3d(-2%, -1%, 0); }
+}
+
+@keyframes operations-glow-pulse {
+  0%, 100% { opacity: .55; box-shadow: 0 0 16px 2px #0bd9ff; }
+  50% { opacity: 1; box-shadow: 0 0 28px 6px #0bd9ff; }
+}
+
 .platform-preview { padding: 58px 0 72px; background: #f7f7f2; }
 .platform-preview > .container { display: grid; grid-template-columns: .78fr 1.5fr; gap: clamp(32px, 6vw, 92px); align-items: center; }
 .platform-preview-intro h2 { margin: 19px 0 18px; color: #102942; font-size: clamp(34px, 3.4vw, 52px); letter-spacing: -.055em; line-height: 1.02; }
